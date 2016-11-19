@@ -55,3 +55,14 @@ function getBreeds(){
 	});
 }
 
+function getOwner(){
+	var params = {first_name : "", last_name:""};
+	$.get("http://continentalgenetics.ddns.net:8080/get_customer", function( data ) {
+		var dat = JSON.parse(data)
+		var test ="";
+		for (var x in dat){
+		test+="<option value='"+dat[x].customer_id+"'>"+dat[x].last_name+", "+dat[x].first_name+"</option>";
+		}
+		$('#owner').html(test);
+	});
+}
