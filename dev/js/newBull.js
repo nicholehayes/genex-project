@@ -2,9 +2,25 @@
  * Created by Amy on 11/19/2016.
  */
 
+/**
+var uploadbutton = document.getElementById("uploadBtn");
+
+uploadbutton.onclick = function () {
+	this.value = null;
+
+}
+uploadbutton.onchange = function () {
+	document.getElementById("uploadFile").placeholder = this.value;
+	alert(this.value);
+};
+**/
+
+
 document.getElementById("uploadBtn").onchange = function () {
 	document.getElementById("uploadFile").value = this.files[0].name;
 };
+
+
 
 function newBull(){
     var form = $('#newbullform')[0]; // You need to use standart javascript object here
