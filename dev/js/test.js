@@ -1,13 +1,14 @@
 function getBreeds(){
-	$.ajax({
-		url: 'http://continentalgenetics.ddns.net:8080/getbreed',
-		type: 'GET',
-		success:function(data){
-			if(data!=""){
-				$("body").text(data);
-			}else{
-				alert("No breed information available");
-			}
+	var params = {breed: "", abbr: ""};
+	$.get("http://continentalgenetics.ddns.net:8080/get_breed", params, function( data ) {
+		var dat = JSON.parse(data)
+		var test ="";
+		for (var x in dat){
+		test+="<option value='"+dat[x].breed_abbreviation+"'>"+dat[x].breed+"</option>";
 		}
+		$('#breed').html(test);
 	});
 }
+
+$(document).ready(function(){
+});
