@@ -181,7 +181,7 @@
                         <h6>Ownership</h6>
                         <div id="ownership">
                         <div class="mdl-selectfield mdl-js-selectfield">
-                            <select id="owner" name="owner" class="mdl-selectfield__select" onclick = "getOwner()">
+                            <select class="owner" name="owner" class="mdl-selectfield__select">
                                 <option value="">Choose Customer</option>
 
                             </select>
@@ -194,7 +194,7 @@
                     </div>
                     </div>
 
-                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect" type="button" style = "width: 100px" onClick="addOwnership()" name="verifyownership">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect" type="button" style = "width: 100px" onClick="addOwnership();getOwner();" name="verifyownership">
                         ADD OWNER
                     </button>
 

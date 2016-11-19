@@ -72,16 +72,20 @@ function getBreeds(){
 		$('#breed').html(test);
 	});
 }
-
+var i = 1;
 function getOwner(){
 	var params = {first_name : "", last_name:""};
 	$.get("http://continentalgenetics.ddns.net:8080/get_customer", function( data ) {
 		var dat = JSON.parse(data)
-		var test ="";
+		var test ="<option value = ''>---</option>";
 		for (var x in dat){
 		test+="<option value='"+dat[x].customer_id+"'>"+dat[x].last_name+", "+dat[x].first_name+"</option>";
 		}
-		$('#owner').html(test);
+		$('.owner').html(test);
+		$('.owner').addClass('owners');
+		$('.owner').attr('id','owner'+i);
+		i++;
+		$('.owner').removeClass('owner');
 
 	});
 }
@@ -90,7 +94,7 @@ function addOwnership(){
 
 	var strVar="";
 	strVar += "<div class=\"mdl-selectfield mdl-js-selectfield\">";
-	strVar += "                            <select id=\"owner\" name=\"owner\" class=\"mdl-selectfield__select\" onclick = \"getOwner()\">";
+	strVar += "                            <select class=\"owner\" name=\"owner\" class=\"mdl-selectfield__select\">";
 	strVar += "                                <option value=\"\">Choose Customer<\/option>";
 	strVar += "";
 	strVar += "                            <\/select>";
@@ -112,4 +116,5 @@ function changeOwnerCount() {
 
 $(document).ready(function(){
 	getBreeds();
+	getOwner();
 });
