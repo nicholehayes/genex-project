@@ -41,20 +41,14 @@ $(document).ready(function() {
 
 
 function newBull(){
-    var data = {
-		 breed_abbreviation: $('#breed').val(),
-		 name : $('#name').val(),
-		 registration_number : $('#regnum').val(),
-		 css_certification : $('input[name="options"]:checked').val(),
-		 bull_pic_name : $('#uploadFile').val()
-	 };
+	var formData = JSON.stringify($("#newbullform").serializeArray());
+
     $.ajax({
         url: 'http://continentalgenetics.ddns.net:8080/add_bull',
-        data: JSON.stringify($(data).serializeArray()),
+        data: formData,
         type: 'POST',
-        // THIS MUST BE DONE FOR FILE UPLOADING
-        contentType: false,
-        processData: false,
+			dataType: 'json',
+			contentType:"application/json",
         success:function(data){
             if(data.substr(0,1) === "1"){
                 alert("success");
@@ -74,7 +68,7 @@ function getBreeds(){
 		for (var x in dat){
 		test+="<option value='"+dat[x].breed_abbreviation+"'>"+dat[x].breed+"</option>";
 		}
-		$('#breed').html(test);
+		$('#breed_abbreviation').html(test);
 	});
 }
 var i = 1;
