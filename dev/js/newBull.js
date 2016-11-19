@@ -29,7 +29,7 @@ function newBull(){
 
 function getBreeds(){
 	$.ajax({
-		url: './php/getbreeds.php',
+		url: 'http://continentalgenetics.ddns.net:8080/ping',
 		type: 'GET',
 		success:function(data){
 			if(data!=""){
@@ -47,7 +47,7 @@ function addBreeds(data){
 	for(var i = 0; i < breeds.length-1; i++){
 		var breed = breeds[i];
 		var breed_abbreviation =  breeds[++i];
-		options+= "<option value='"+breed_abbreviation+"'>"+breed+"</option>\n";
+		options+= "<option class='mdl-menu__item' value='"+breed_abbreviation+"'>"+breed+"</option>\n";
 	}
 	$('#breed').append(options);
 }
