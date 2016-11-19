@@ -50,7 +50,7 @@ function newBull(){
 	 };
     $.ajax({
         url: 'http://continentalgenetics.ddns.net:8080/add_bull',
-        data: JSON.stringify(data),
+        data: JSON.stringify(data).serializeArray(),
         type: 'POST',
         // THIS MUST BE DONE FOR FILE UPLOADING
         contentType: false,
