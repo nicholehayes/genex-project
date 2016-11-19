@@ -27,10 +27,12 @@
     <link rel="canonical" href="http://www.example.com/">
     -->
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.cyan-light_blue.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/getmdl-select.css">
     <style>
         #view-source {
             position: fixed;
@@ -41,18 +43,13 @@
             margin-bottom: 40px;
             z-index: 900;
         }
-        .demo-card-square{
+
+        .demo-card-square {
             width: 220px;
 
             margin: 5px;
 
         }
-
-
-
-
-
-
 
         .mdl-card__title-text {
             color: white;
@@ -95,23 +92,30 @@
             </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">dashboard</i>Dashboard</a>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">perm_identity</i>Customers</a>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">network_wifi</i>Bulls</a>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">location_on</i>Locations</a>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">assessment</i>Transactions</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                       role="presentation">dashboard</i>Dashboard</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                       role="presentation">perm_identity</i>Customers</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                       role="presentation">network_wifi</i>Bulls</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                       role="presentation">location_on</i>Locations</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                       role="presentation">assessment</i>Transactions</a>
             <div class="mdl-layout-spacer"></div>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                       role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
         </nav>
     </div>
     <main class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid demo-content">
-            <form method="post" action="http://continentalgenetics.ddns.net/php/createcustomer.php" id="registercustomerform">
-            <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="width: 90%; margin-left: 10px;">
-                <div class="mdl-card__title" style="background-color: #37474F;">
-                    <h2 class="mdl-card__title-text" >New Customer</h2>
-                </div>
-                <div class="mdl-card__supporting-text">
+            <form method="post" action="http://continentalgenetics.ddns.net/php/createcustomer.php"
+                  id="registercustomerform">
+                <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="width: 90%; margin-left: 10px;">
+                    <div class="mdl-card__title" style="background-color: #37474F;">
+                        <h2 class="mdl-card__title-text">New Customer</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
 
                         <h6>Name</h6>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -132,17 +136,84 @@
                             <input class="mdl-textfield__input" type="text" id="city" name="city">
                             <label class="mdl-textfield__label" for="city">City</label>
                         </div>
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 75px;">
-                            <input class="mdl-textfield__input" type="text" id="state" name="state">
-                            <label class="mdl-textfield__label" for="state">State</label>
+
+
+                        <!-- Select with arrow-->
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height"
+                             style="width: 75px;">
+                            <input class="mdl-textfield__input" type="text" id="state" value="--" readonly tabIndex="-1"
+                                   name="state">
+                            <label for="state">
+                                <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                            </label>
+                            <label for="state" class="mdl-textfield__label">State</label>
+                            <ul for="state" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                <li class="mdl-menu__item">--</li>
+                                <li class="mdl-menu__item">AL</li>
+                                <li class="mdl-menu__item">AK</li>
+                                <li class="mdl-menu__item">AZ</li>
+                                <li class="mdl-menu__item">CA</li>
+                                <li class="mdl-menu__item">CO</li>
+                                <li class="mdl-menu__item">CT</li>
+                                <li class="mdl-menu__item">DC</li>
+                                <li class="mdl-menu__item">DE</li>
+                                <li class="mdl-menu__item">FL</li>
+                                <li class="mdl-menu__item">GA</li>
+                                <li class="mdl-menu__item">HI</li>
+                                <li class="mdl-menu__item">ID</li>
+                                <li class="mdl-menu__item">IL</li>
+
+                                <li class="mdl-menu__item">IN</li>
+                                <li class="mdl-menu__item">IA</li>
+                                <li class="mdl-menu__item">KS</li>
+                                <li class="mdl-menu__item">KY</li>
+                                <li class="mdl-menu__item">LA</li>
+                                <li class="mdl-menu__item">ME</li>
+                                <li class="mdl-menu__item">MD</li>
+                                <li class="mdl-menu__item">MA</li>
+                                <li class="mdl-menu__item">MI</li>
+                                <li class="mdl-menu__item">MN</li>
+                                <li class="mdl-menu__item">MS</li>
+                                <li class="mdl-menu__item">MO</li>
+                                <li class="mdl-menu__item">MT</li>
+
+                                <li class="mdl-menu__item">NE</li>
+                                <li class="mdl-menu__item">NV</li>
+                                <li class="mdl-menu__item">NH</li>
+                                <li class="mdl-menu__item">NJ</li>
+                                <li class="mdl-menu__item">NM</li>
+                                <li class="mdl-menu__item">NY</li>
+                                <li class="mdl-menu__item">NC</li>
+                                <li class="mdl-menu__item">ND</li>
+                                <li class="mdl-menu__item">OH</li>
+                                <li class="mdl-menu__item">OK</li>
+                                <li class="mdl-menu__item">OR</li>
+                                <li class="mdl-menu__item">PA</li>
+                                <li class="mdl-menu__item">RI</li>
+
+                                <li class="mdl-menu__item">SC</li>
+                                <li class="mdl-menu__item">SD</li>
+                                <li class="mdl-menu__item">TN</li>
+                                <li class="mdl-menu__item">TX</li>
+                                <li class="mdl-menu__item">UT</li>
+                                <li class="mdl-menu__item">VT</li>
+                                <li class="mdl-menu__item">VA</li>
+                                <li class="mdl-menu__item">VI</li>
+                                <li class="mdl-menu__item">WA</li>
+                                <li class="mdl-menu__item">WV</li>
+                                <li class="mdl-menu__item">WI</li>
+                                <li class="mdl-menu__item">WY</li>
+                            </ul>
                         </div>
+
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100px;">
                             <input class="mdl-textfield__input" type="text" id="zipcode" name="zipcode">
                             <label class="mdl-textfield__label" for="zipcode">Zipcode</label>
                         </div>
                         <h6>Phone</h6>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="telnum" name="telnum">
+                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="telnum"
+                                   name="telnum">
                             <label class="mdl-textfield__label" for="telnum">#</label>
                             <span class="mdl-textfield__error">Input is not a number!</span>
                         </div>
@@ -152,28 +223,33 @@
                             <label class="mdl-textfield__label" for="email">Email Address</label>
                         </div>
 
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <!-- Flat button with ripple -->
-                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect" type="button" onClick="registerCustomer()" name="createcustomer">
-                        SAVE
-                    </button>
-                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect" type="button">
-                        CANCEL
-                    </button>
-                </div>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <!-- Flat button with ripple -->
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" type="button"
+                                onClick="registerCustomer()" name="createcustomer">
+                            SAVE
+                        </button>
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" type="button">
+                            CANCEL
+                        </button>
+                    </div>
 
-            </div>
+                </div>
             </form>
 
 
-
         </div>
+        <form action="#">
+
+        </form>
+
 
     </main>
 </div>
 <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="/js/registerCustomer.js"></script>
+<script src="js/getmdl-select.js"></script>
 </body>
 </html>
