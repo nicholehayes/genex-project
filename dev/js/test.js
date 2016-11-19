@@ -11,4 +11,5 @@ function getBreeds(){
 }
 
 $(document).ready(function(){
+	getBreeds();
 });

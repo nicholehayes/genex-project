@@ -108,6 +108,8 @@ function addOwnership(){
 
 function changeOwnerCount() {
 
-
-
 }
+
+$(document).ready(function(){
+	getBreeds();
+});
