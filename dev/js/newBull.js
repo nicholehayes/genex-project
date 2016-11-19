@@ -46,11 +46,7 @@ function isNullBlank(arg){
 function getBreeds(){
 	$.ajax({
 		url: './php/getbreeds.php',
-		data: formData,
-		type: 'POST',
-		// THIS MUST BE DONE FOR FILE UPLOADING
-		contentType: false,
-		processData: false,
+		type: 'GET',
 		success:function(data){
 			if(data!=""){
 				addBreeds(data);
