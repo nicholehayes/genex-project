@@ -22,27 +22,6 @@ function newBull(){
     });
 }
 
-function checkFields(){
-	var check = true;
-	var fields = {$.('#breed').val(),
-					  $.('#name').val(),
-					  $.('#regnum').val(),
-					  $.('input[name="options"]:checked').val(),
-					  $.('#dob').val(),
-					  $.('#image').val()};
-   for( var x in fields){
-		if (!isNullBlank(x))
-			check = false;
-	}			  
-	return check;
-}
-
-function isNullBlank(arg){
-	if (arg!= null && arg!="")
-		return true;
-	return false;
-}
-
 function getBreeds(){
 	$.ajax({
 		url: './php/getbreeds.php',
@@ -60,7 +39,7 @@ function getBreeds(){
 function addBreeds(data){
 	var breeds = data.split(',');
 	var options = "";
-	for(var i = 0; i < breeds.length-1, i++){
+	for(var i = 0; i < breeds.length-1; i++){
 		var breed = breeds[i];
 		var breed_abbreviation =  breeds[++i];
 		options+= "<option value='"+breed_abbreviation+"'>"+breed+"</option>\n";
