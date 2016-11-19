@@ -41,11 +41,16 @@ $(document).ready(function() {
 
 
 function newBull(){
-    var form = $('#newbullform')[0]; // You need to use standart javascript object here
-    var formData = new FormData(form);
+    var data = {
+		 breed_abbreviation: $('#breed').val(),
+		 name : $('#name').val(),
+		 registration_number : $('#regnum').val(),
+		 css_certification : $('input[name="options"]:checked').val(),
+		 bull_pic_name : $('#uploadFile').val()
+	 };
     $.ajax({
-        url: './php/createcustomer.php',
-        data: formData,
+        url: 'http://continentalgenetics.ddns.net:8080/add_bull',
+        data: data,
         type: 'POST',
         // THIS MUST BE DONE FOR FILE UPLOADING
         contentType: false,
