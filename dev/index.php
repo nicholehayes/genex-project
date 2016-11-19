@@ -122,10 +122,10 @@
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
             <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">dashboard</i>Dashboard</a>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">perm_identity</i>Customers</a>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">network_wifi</i>Bulls</a>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">location_on</i>Locations</a>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">assessment</i>Transactions</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">perm_identity</i>Customer</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">network_wifi</i>Bull</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">location_on</i>Location</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">assessment</i>Transaction</a>
             <div class="mdl-layout-spacer"></div>
             <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
         </nav>
@@ -135,48 +135,90 @@
 
             <div class="demo-card-square mdl-card mdl-shadow--2dp ">
                 <div class="mdl-card__title mdl-card--expand mdl-color--blue-grey-800">
-                    <h2 class="mdl-card__title-text">Customers</h2>
+                    <h2 class="mdl-card__title-text">Customer</h2>
                 </div>
 
                 <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"><i class="material-icons">more_vert</i>
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                         View
+                    </a>
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="new-customer.html">
+                        Add
                     </a>
                 </div>
             </div>
 
             <div class="demo-card-square mdl-card mdl-shadow--2dp">
                 <div class="mdl-card__title mdl-card--expand mdl-color--blue-grey-800">
-                    <h2 class="mdl-card__title-text">Bulls</h2>
+                    <h2 class="mdl-card__title-text">Bull</h2>
                 </div>
 
                 <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"><i class="material-icons">more_vert</i>
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                         View
+                    </a>
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="new-bull.html">
+                        Add
                     </a>
                 </div>
             </div>
 
             <div class="demo-card-square mdl-card mdl-shadow--2dp">
                 <div class="mdl-card__title mdl-card--expand mdl-color--blue-grey-800">
-                    <h2 class="mdl-card__title-text">Locations</h2>
+                    <h2 class="mdl-card__title-text">Location</h2>
                 </div>
 
                 <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"><i class="material-icons">more_vert</i>
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                         View
+                    </a>
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Add
                     </a>
                 </div>
             </div>
 
             <div class="demo-card-square mdl-card mdl-shadow--2dp">
                 <div class="mdl-card__title mdl-card--expand mdl-color--blue-grey-800">
-                    <h2 class="mdl-card__title-text">Transactions</h2>
+                    <h2 class="mdl-card__title-text">Transaction</h2>
                 </div>
 
                 <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"><i class="material-icons">more_vert</i>
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                         View
+                    </a>
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Add
+                    </a>
+                </div>
+            </div>
+
+            <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand mdl-color--blue-grey-800">
+                    <h2 class="mdl-card__title-text">Collection</h2>
+                </div>
+
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        View
+                    </a>
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Add
+                    </a>
+                </div>
+            </div>
+
+            <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand mdl-color--blue-grey-800">
+                    <h2 class="mdl-card__title-text">Storage</h2>
+                </div>
+
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        View
+                    </a>
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Add
                     </a>
                 </div>
             </div>
