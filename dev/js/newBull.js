@@ -105,14 +105,16 @@ function addOwnership(){
 	strVar += "                            <\/select>";
 	strVar += "                        <\/div>";
 	strVar += "                            <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">";
-	strVar += "                                <input class=\"mdl-textfield__input\" type=\"text\" placeholder=\"Percent Ownership\"id=\"percent"+i+"\" name=\"percent"+i+"\">";
-	strVar += "                                <label class=\"mdl-textfield__label\" for=\"percent"+i+"\"><\/label>";
+	strVar += "                                <input class=\"mdl-textfield__input\" type=\"text\" id=\"percent"+i+"\" name=\"percent"+i+"\">";
+	strVar += "                                <label class=\"mdl-textfield__label\" for=\"percent"+i+"\">Percent Ownership<\/label>";
 	strVar += "                            <\/div>";
 
 
 
-	var text = document.getElementById('divtext').text;
+	//var text = document.getElementById('divtext').text;
 	$("#ownership").append(strVar);
+	componentHandler.upgradeDom();
+
 }
 
 
