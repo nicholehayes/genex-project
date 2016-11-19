@@ -2,7 +2,7 @@
  * Created by Amy on 11/19/2016.
  */
 function newBull(){
-    var form = $('#registercustomerform')[0]; // You need to use standart javascript object here
+    var form = $('#newbullform')[0]; // You need to use standart javascript object here
     var formData = new FormData(form);
     $.ajax({
         url: './php/createcustomer.php',
@@ -20,4 +20,20 @@ function newBull(){
             }
         }
     });
+}
+
+function checkFields(){
+	var check = true;
+	var fields = {$.('#bullabbreviation').val(),
+					  $.('#name').val(),
+					  $.('#registrationnumber').val(),
+					  $.('#csscertification').val(),
+					  $.('#dob').val(),
+					  $.('#bullpicname').val()}
+}
+
+function isNullBlank(arg){
+	if (arg!= null && arg!="")
+		return true;
+	return false;
 }
