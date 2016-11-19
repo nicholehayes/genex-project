@@ -94,14 +94,14 @@ function addOwnership(){
 
 	var strVar="";
 	strVar += "<div class=\"mdl-selectfield mdl-js-selectfield\">";
-	strVar += "                            <select class=\"owner\" name=\"owner\" class=\"mdl-selectfield__select\">";
+	strVar += "                            <select name=\"owner"+i+"\" class=\"mdl-selectfield__select owner\">";
 	strVar += "                                <option value=\"\">Choose Customer<\/option>";
 	strVar += "";
 	strVar += "                            <\/select>";
 	strVar += "                        <\/div>";
 	strVar += "                            <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">";
-	strVar += "                                <input class=\"mdl-textfield__input\" type=\"text\" id=\"percent\" name=\"percent+1\" >";
-	strVar += "                                <label class=\"mdl-textfield__label\" for=\"percent\">Percent Ownership<\/label>";
+	strVar += "                                <input class=\"mdl-textfield__input\" type=\"text\" placeholder=\"Percent Ownership\"id=\"percent"+i+"\" name=\"percent"+i+"\">";
+	strVar += "                                <label class=\"mdl-textfield__label\" for=\"percent"+i+"\"><\/label>";
 	strVar += "                            <\/div>";
 
 
@@ -110,9 +110,7 @@ function addOwnership(){
 	$("#ownership").append(strVar);
 }
 
-function changeOwnerCount() {
 
-}
 
 $(document).ready(function(){
 	getBreeds();
