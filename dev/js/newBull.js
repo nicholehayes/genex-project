@@ -44,26 +44,14 @@ function newBull(){
 }
 
 function getBreeds(){
-	$.ajax({
-		url: 'http://continentalgenetics.ddns.net:8080/ping',
-		type: 'GET',
-		success:function(data){
-			if(data!=""){
-				addBreeds(data);
-			}else{
-				alert("No breed information available");
-			}
+	var params = {breed: "", abbr: ""};
+	$.get("http://continentalgenetics.ddns.net:8080/get_breed", params, function( data ) {
+		var dat = JSON.parse(data)
+		var test ="";
+		for (var x in dat){
+		test+="<option value='"+dat[x].breed_abbreviation+"'>"+dat[x].breed+"</option>";
 		}
+		$('#breed').html(test);
 	});
 }
 
-function addBreeds(data){
-	var breeds = data.split(',');
-	var options = "";
-	for(var i = 0; i < breeds.length-1; i++){
-		var breed = breeds[i];
-		var breed_abbreviation =  breeds[++i];
-		options+= "<option class='mdl-menu__item' value='"+breed_abbreviation+"'>"+breed+"</option>\n";
-	}
-	$('#breed').append(options);
-}
