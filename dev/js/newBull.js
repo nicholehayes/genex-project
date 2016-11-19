@@ -27,7 +27,7 @@ function checkFields(){
 	var fields = {$.('#breed').val(),
 					  $.('#name').val(),
 					  $.('#regnum').val(),
-					  $.('input[name=options]:checked').val(),
+					  $.('input[name="options"]:checked').val(),
 					  $.('#dob').val(),
 					  $.('#image').val()};
    for( var x in fields){
@@ -41,4 +41,8 @@ function isNullBlank(arg){
 	if (arg!= null && arg!="")
 		return true;
 	return false;
+}
+
+function getBreed(){
+	
 }

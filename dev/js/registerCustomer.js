@@ -9,12 +9,13 @@ function registerCustomer(){
 		contentType: false,
 		processData: false,
 		success:function(data){
-			if(data.substr(0,1) === "1"){
+			if(~data.indexOf("1")){
 				alert("success");
-				$('#registercustomerform')[0].reset();
+				window.location.reload();
 			}
 			else{
-				alert(data);				
+				alert(data);
+				window.location.reload();
 			}
 		}
 	});
