@@ -11,7 +11,7 @@ function registerCustomer(){
 		success:function(data){
 			if(data.substr(0,1) === "1"){
 				alert("success");
-				location.reload();
+				$('#registercustomerform')[0].reset();
 			}
 			else{
 				alert(data);				

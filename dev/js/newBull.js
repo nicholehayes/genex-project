@@ -24,12 +24,17 @@ function newBull(){
 
 function checkFields(){
 	var check = true;
-	var fields = {$.('#bullabbreviation').val(),
+	var fields = {$.('#breed').val(),
 					  $.('#name').val(),
-					  $.('#registrationnumber').val(),
-					  $.('#csscertification').val(),
+					  $.('#regnum').val(),
+					  $.('input[name=options]:checked').val(),
 					  $.('#dob').val(),
-					  $.('#bullpicname').val()}
+					  $.('#image').val()};
+   for( var x in fields){
+		if (!isNullBlank(x))
+			check = false;
+	}			  
+	return check;
 }
 
 function isNullBlank(arg){
