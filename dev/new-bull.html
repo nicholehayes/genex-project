@@ -170,16 +170,24 @@
                         </div>
 
                         <h6>Upload Image</h6>
-                        <!--div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
-                            <input class="mdl-textfield__input" placeholder="Bull Image" type="text" name="uploadFile"id="uploadFile" readonly/>
-                            <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
-                                <i class="material-icons">attach_file</i><input id="input"type="file" name="uploadBtn" id="uploadBtn">
-                            </div>
-                        </div-->
+                        
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
                             <input placeholder="File" type="text" id="uploadFile" readonly/>
 
                                 <input type="file" id="uploadBtn">
+
+                        </div>
+
+                        <h6>Ownership</h6>
+                        <div class="mdl-selectfield mdl-js-selectfield">
+                            <select id="owner" name="owner" class="mdl-selectfield__select" onclick = "getOwner()">
+                                <option value="">Choose Customer</option>
+
+                            </select>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="percent" name="percent">
+                                <label class="mdl-textfield__label" for="dob">Percent Ownership</label>
+                            </div>
 
                         </div>
 
