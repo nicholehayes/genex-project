@@ -1,6 +1,11 @@
 /**
  * Created by Amy on 11/19/2016.
  */
+
+document.getElementById("uploadBtn").onchange = function () {
+	document.getElementById("uploadFile").value = this.files[0].name;
+};
+
 function newBull(){
     var form = $('#newbullform')[0]; // You need to use standart javascript object here
     var formData = new FormData(form);
