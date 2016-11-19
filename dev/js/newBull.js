@@ -20,6 +20,24 @@ document.getElementById("uploadBtn").onchange = function () {
 	document.getElementById("uploadFile").value = this.files[0].name;
 };
 
+$(document).ready(function() {
+	var max_fields      = 10; //maximum input boxes allowed
+	var wrapper         = $(".input_fields_wrap"); //Fields wrapper
+	var add_button      = $(".add_field_button"); //Add button ID
+
+	var x = 1; //initlal text box count
+	$(add_button).click(function(e){ //on add input button click
+		e.preventDefault();
+		if(x < max_fields){ //max input box allowed
+			x++; //text box increment
+			$(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+		}
+	});
+
+	$(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+		e.preventDefault(); $(this).parent('div').remove(); x--;
+	})
+});
 
 
 function newBull(){
@@ -64,5 +82,32 @@ function getOwner(){
 		test+="<option value='"+dat[x].customer_id+"'>"+dat[x].last_name+", "+dat[x].first_name+"</option>";
 		}
 		$('#owner').html(test);
+
 	});
+}
+
+function addOwnership(){
+
+	var strVar="";
+	strVar += "<div class=\"mdl-selectfield mdl-js-selectfield\">";
+	strVar += "                            <select id=\"owner\" name=\"owner\" class=\"mdl-selectfield__select\" onclick = \"getOwner()\">";
+	strVar += "                                <option value=\"\">Choose Customer<\/option>";
+	strVar += "";
+	strVar += "                            <\/select>";
+	strVar += "                        <\/div>";
+	strVar += "                            <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">";
+	strVar += "                                <input class=\"mdl-textfield__input\" type=\"text\" id=\"percent\" name=\"percent+1\" >";
+	strVar += "                                <label class=\"mdl-textfield__label\" for=\"percent\">Percent Ownership<\/label>";
+	strVar += "                            <\/div>";
+
+
+
+	var text = document.getElementById('divtext').text;
+	$("#ownership").append(strVar);
+}
+
+function changeOwnerCount() {
+
+
+
 }
