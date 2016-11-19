@@ -2,7 +2,7 @@ function registerCustomer(){
 	var form = $('#registercustomerform')[0]; // You need to use standart javascript object here
 	var formData = new FormData(form);
 	$.ajax({
-		url: '/php/createcustomer.php',
+		url: './php/createcustomer.php',
 		data: formData,
 		type: 'POST',
 		// THIS MUST BE DONE FOR FILE UPLOADING
