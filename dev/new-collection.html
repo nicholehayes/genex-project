@@ -1,0 +1,235 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>New Collection</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.cyan-light_blue.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #view-source {
+            position: fixed;
+            display: block;
+            right: 0;
+            bottom: 0;
+            margin-right: 40px;
+            margin-bottom: 40px;
+            z-index: 900;
+        }
+        .demo-card-square{
+            width: 220px;
+
+            margin: 5px;
+
+        }
+
+        .mdl-button--file #input{
+            cursor: pointer;
+            height: 100%;
+            right: 0;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            width: 300px;
+            z-index: 4;
+        }
+
+
+        .mdl-textfield__input {
+            box-sizing: border-box;
+            width: calc(100% - 32px);
+        }
+
+        .mdl-button--file {
+            right: 0;
+        }
+
+
+        .mdl-card__title-text {
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title">Collection</span>
+            <div class="mdl-layout-spacer"></div>
+
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+                <i class="material-icons">more_vert</i>
+            </button>
+            <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+                <li class="mdl-menu__item">About</li>
+                <li class="mdl-menu__item">Contact</li>
+                <li class="mdl-menu__item">Legal information</li>
+            </ul>
+        </div>
+    </header>
+    <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <header class="demo-drawer-header">
+            <h5>Continental Genetics</h5>
+            <i class="material-icons">account_box</i>
+            <div class="demo-avatar-dropdown">
+                <span>hello@example.com</span>
+                <div class="mdl-layout-spacer"></div>
+                <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                    <i class="material-icons" role="presentation">arrow_drop_down</i>
+                    <span class="visuallyhidden">Accounts</span>
+                </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+                    <li class="mdl-menu__item">hello@example.com</li>
+                    <li class="mdl-menu__item">info@example.com</li>
+                    <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
+                </ul>
+            </div>
+        </header>
+        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">dashboard</i>Dashboard</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">perm_identity</i>Customers</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">network_wifi</i>Bulls</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">location_on</i>Locations</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">assessment</i>Transactions</a>
+            <div class="mdl-layout-spacer"></div>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
+        </nav>
+    </div>
+    <main class="mdl-layout__content mdl-color--grey-100">
+        <div class="mdl-grid demo-content">
+            <form method="post" action="http://continentalgenetics.ddns.net/php/createcustomer.php" id="newbullform">
+                <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="width: 50em; margin-left: 10px;">
+                    <div class="mdl-card__title" style="background-color: #37474F;">
+                        <h2 class="mdl-card__title-text" >New Collection</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+
+                        <h6>Bull</h6>
+                        <div class="mdl-selectfield mdl-js-selectfield">
+                            <select id="bull" name="bull" class="mdl-selectfield__select" >
+                                <option value="">Choose Bull</option>
+
+                            </select>
+
+                        </div>
+
+                        <h6>Stud Code</h6>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="studcode" name="studcode">
+                            <label class="mdl-textfield__label" for="studcode">Stud Code</label>
+                        </div>
+
+                        <h6>Date</h6>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="date" name="date">
+                            <label class="mdl-textfield__label" for="date">Date</label>
+                        </div>
+
+
+                        <h6>Upload Protocol</h6>
+
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
+                            <input placeholder="File" type="text" id="uploadFile" readonly/>
+
+                            <input type="file" id="uploadBtn">
+
+                        </div>
+
+                        <h6>Volume</h6>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="volume" name="volume">
+                            <label class="mdl-textfield__label" for="volume">Volume</label>
+                        </div>
+
+                        <h6>Motility</h6>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="motility" name="motility">
+                            <label class="mdl-textfield__label" for="motility">Motility</label>
+                        </div>
+
+                        <h6>Volume</h6>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="units" name="units">
+                            <label class="mdl-textfield__label" for="units">Units</label>
+                        </div>
+
+                        <h6>Notes</h6>
+                        <div class="mdl-textfield mdl-js-textfield">
+                            <textarea class="mdl-textfield__input" type="text" rows= "5" id="notes" name="notes" ></textarea>
+                            <label class="mdl-textfield__label" for="notes">Notes...</label>
+                        </div>
+
+
+                    </div>
+
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect" type="button" style = "width: 100px" onClick="addOwnership();getOwner();" name="verifyownership">
+                        ADD OWNER
+                    </button>
+
+                    <div class="mdl-card__actions mdl-card--border">
+                        <!-- Flat button with ripple -->
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" type="button" onClick="registerCustomer()" name="createcustomer">
+                            SAVE
+                        </button>
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" type="button">
+                            CANCEL
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+
+
+
+        </div>
+
+    </main>
+</div>
+<script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="./js/newBull.js"></script>
+<script id="divtext" type="text/plain">
+
+
+                        <div class="mdl-selectfield mdl-js-selectfield">
+                            <select id="owner" name="owner" class="mdl-selectfield__select" onclick = "getOwner()">
+                                <option value="">Choose Customer</option>
+
+                            </select>
+                        </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="percent" name="percent">
+                                <label class="mdl-textfield__label" for="percent">Percent Ownership</label>
+                            </div>
+
+
+</script>
+</body>
+</html>
