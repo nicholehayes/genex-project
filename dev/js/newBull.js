@@ -42,20 +42,37 @@ $(document).ready(function() {
 
 function newBull(){
 	var formData = JSON.stringify($("#newbullform").serializeArray());
-
-    $.ajax({
-        url: 'http://continentalgenetics.ddns.net:8080/add_bull',
-        data: formData,
-        type: 'POST',
+	if (checkOwnerships()){
+		var bullid = 0;
+		$.ajax({
+			url: 'http://continentalgenetics.ddns.net:8080/add_bull',
+			data: formData,
+			type: 'POST',
 			dataType: 'json',
 			contentType:"application/json",
-        success:function(data){
-            if (data!=""){
-					alert("success");
-					window.location.reload();
-				}
-        }
-    });
+			success:function(data){
+				data = JSON.parse(data);
+				bullid = data.bull_id;
+				alert(bullid);
+			}
+		});
+		var data = {
+			breed_abbreviation:$('#breed_abbreviation').val(),
+			bull_id: bullid,
+			owners : addOwners()
+		};
+		$.ajax({
+			url: 'http://continentalgenetics.ddns.net:8080/add_owners',
+			data : data,
+			type: 'POST',
+			dataType: 'json',
+			contentType:"application/json",
+			success:function(data){
+				alert(data);
+			}
+		});
+	}
+    
 }
 
 function getBreeds(){
@@ -119,13 +136,15 @@ function checkOwnerships(){
 	}
 }
 
-function getOwners(){
+function addOwners(){
 	var owners = $('.owners');
 	var percents = $('.percents');
-	
+	var data = new Array();
 	for (var i = 0; i < owners.length; i++){
-		
+		var arg = {'customer_id':owners[i].value, 'percent_ownership':percents[i].value};
+		data.push(arg);
 	}
+	return data;
 }
 
 
