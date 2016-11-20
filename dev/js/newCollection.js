@@ -3,7 +3,7 @@ function getBulls(){
 		var dat = JSON.parse(data)
 		var test ="<option value=''>Choose Bull</option>";
 		for (var x in dat){
-			test+="<option value='"+dat[x].breed_abbreviation+"-"+pad(dat[x].breed_id,5)+"'>"+dat[x].breed_abbreviation+"-"+pad(dat[x].breed_id,5)+"</option>";
+			test+="<option value='"+dat[x].breed_abbreviation+pad(dat[x].bull_id,5)+"'>"+dat[x].breed_abbreviation+pad(dat[x].bull_id,5)+"</option>";
 		}
 		$('#bull').html(test);
 	});
