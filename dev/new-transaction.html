@@ -75,6 +75,10 @@
         }
 
 
+
+
+
+
     </style>
 </head>
 <body>
@@ -113,14 +117,24 @@
             </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-            <a class="mdl-navigation__link" href="index.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">dashboard</i>Dashboard</a>
-            <a class="mdl-navigation__link" href="new-customer.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">perm_identity</i>Customer</a>
-            <a class="mdl-navigation__link" href="new-bull.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">network_wifi</i>Bull</a>
-            <a class="mdl-navigation__link" href="new-collection.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">location_on</i>Collection</a>
-            <a class="mdl-navigation__link" href="new-storage.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">location_on</i>Storage</a>
-            <a class="mdl-navigation__link" href="new-transaction.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">assessment</i>Transaction</a>
+            <a class="mdl-navigation__link" href="index.php"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                role="presentation">dashboard</i>Dashboard</a>
+            <a class="mdl-navigation__link" href="new-customer.html"><i
+                    class="mdl-color-text--blue-grey-400 material-icons"
+                    role="presentation">perm_identity</i>Customer</a>
+            <a class="mdl-navigation__link" href="new-bull.html"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                    role="presentation">network_wifi</i>Bull</a>
+            <a class="mdl-navigation__link" href="new-collection.html"><i
+                    class="mdl-color-text--blue-grey-400 material-icons"
+                    role="presentation">location_on</i>Collection</a>
+            <a class="mdl-navigation__link" href="new-storage.html"><i
+                    class="mdl-color-text--blue-grey-400 material-icons" role="presentation">location_on</i>Storage</a>
+            <a class="mdl-navigation__link" href="new-transaction.html"><i
+                    class="mdl-color-text--blue-grey-400 material-icons"
+                    role="presentation">assessment</i>Transaction</a>
             <div class="mdl-layout-spacer"></div>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                       role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
         </nav>
     </div>
     <main class="mdl-layout__content mdl-color--grey-100">
@@ -142,6 +156,45 @@
                         </div>
 
 
+                        <br><br>
+                        <h6>Transaction</h6>
+                        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                            <thead>
+                            <tr>
+                                <th class="mdl-data-table__cell--non-numeric">Collection</th>
+                                <th>Tank</th>
+                                <th>Pie</th>
+                                <th>Box</th>
+                                <th>Unit</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">944h4o</td>
+                                <td>01</td>
+                                <td>01</td>
+                                <td>01</td>
+                                <td>150</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="discard">
+                            <input type="radio" id="discard" class="mdl-radio__button" name="transaction" value="1" >
+                            <span class="mdl-radio__label">Discard</span>
+                        </label><br>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="ship">
+                            <input type="radio" id="ship" class="mdl-radio__button" name="transaction" value="2">
+                            <span class="mdl-radio__label">Ship</span>
+                        </label><br>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="move">
+                            <input type="radio" id="move" class="mdl-radio__button" name="transaction" value="3" >
+                            <span class="mdl-radio__label">Move</span>
+                        </label><br>
+
+
+
+
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
                         <!-- Flat button with ripple -->
@@ -149,7 +202,8 @@
                                 name="createcustomer">
                             SAVE
                         </button>
-                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" type="button" onClick=window.location.assign("new-transaction.html")>
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" type="button"
+                                onClick=window.location.assign("new-transaction.html")>
                             CANCEL
                         </button>
                     </div>
