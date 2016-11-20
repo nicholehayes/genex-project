@@ -23,6 +23,19 @@ function getTank(){
 
 function changeTank(){
 	$('#tanknum').val($('#tank').find(':selected').val()).parent().addClass('is-focused');
+	var tank = $('#tank').find(':selected').val();
+	if (tank!= null || tank != '') {
+		$.get("http://continentalgenetics.ddns.net:8080/location/unit_count", {tank_number: tank}, function (data) {
+			var dat = (data)
+			var test = "";
+			for (var x in dat) {
+				var pie = dat[x].pie;
+				var box = dat[x].box;
+				var id = pie + box;
+				$("#" + id).text(dat[x].total_units);
+			}
+		});
+	}
 	componentHandler.upgradeDom();
 
 }
@@ -65,6 +78,7 @@ function getUnitsToBeStored(){
 			});
 		}
 	});
+	console.log(units);
 	$('#unitsstored').val(units).parent().addClass('is-focused');
 }
 
@@ -75,6 +89,7 @@ function addStorage(){
 	var tank = $('#tank').val();
 	var pie = $('#pienum').val();
 	var box = $('#boxnum').val();
+	var id = pie+box;
 	var numunits = parseInt($('#numunits').val());
 	if (numunits > unitsstored){
 		alert("You have exceeded units to be stored");
@@ -96,18 +111,29 @@ function addStorage(){
 					to_location_id: locationid
 				};
 				console.log(params);
-				$.ajax({
-					url: "http://continentalgenetics.ddns.net:8080/transaction/add/insert",
-					data: params,
-					type: 'POST',
-					async: false,
-					success: function(data){
-						console.log(data);
-						getUnitsToBeStored();
+				if (numunits > 300){
+					alert("This will exceed storage capacity.");
+				}else {
+					console.log((parseInt($('#' + id).text()) + parseInt(numunits)));
+					if ((parseInt($('#' + id).text()) + parseInt(numunits)) <= 300) {
+						$.ajax({
+							url: "http://continentalgenetics.ddns.net:8080/transaction/add/insert",
+							data: JSON.stringify(params),
+							type: 'POST',
+							contentType: 'application/json',
+							async: false,
+							success: function (data) {
+								console.log(data);
+							}
+						});
+					} else {
+						alert("This box is full. NO more units can be stored.");
 					}
-				});
+				}
 			}
 		});
+		getUnitsToBeStored();
+		changeTank();
 	}
 
 }
