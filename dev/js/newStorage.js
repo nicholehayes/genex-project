@@ -42,22 +42,28 @@ $(document).ready(function(){
 });
 
 function getUnitsToBeStored(){
-
-	var collection = $('#collectionValue');
-	for (var i=0; i<collection.length; i++){
-
-
-	}
-
-
-
-	$.get("http://continentalgenetics.ddns.net:8080/collection/get", function( data ) {
-		var dat = (data)
-		var test ="<option value=''>Choose Tank</option>";
-		for (var x in dat){
-			test+="<option value='"+dat[x].breed_abbreviation+pad(dat[x].bull_id,5)+fixDate(dat[x].date)+"'>"+dat[x].breed_abbreviation+pad(dat[x].bull_id,5)+fixDate(dat[x].date)+"</option>";
+	var collection = $('#collection').find(':selected').val();
+	var param = {collection_id:collection};
+	var units = 0;
+	$.ajax({
+		url: "http://continentalgenetics.ddns.net:8080/collection/get",
+		data: param,
+		type: 'GET',
+		async: false,
+		success: function(data){
+			units = parseInt(data[0].units);
+			$.ajax({
+				url: "http://continentalgenetics.ddns.net:8080/storage/get",
+				data: param,
+				type: 'GET',
+				async: false,
+				success: function(data){
+					for(var x in data){
+						units-=parseInt(data[x].units);
+					}
+				}
+			});
 		}
-		$('#collection').html(test);
 	});
-
+	$('#unitsstored').val(units).parent().addClass('is-focused');;
 }
