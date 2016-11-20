@@ -14,7 +14,26 @@ function pad (str, max) {
   return str.length < max ? pad("0" + str, max) : str;
 }
 
+function getStud(){
+	var params = {order_by: 'name', order_dir:'ASC'}
+	$.get("http://continentalgenetics.ddns.net:8080/stud/get",params, function( data ) {
+		var dat = (data)
+		var test ="<option value=''>Choose Stud</option>";
+		for (var x in dat){
+			test+="<option value='"+dat[x].stud_code+"'>"+pad(dat[x].stud_code,4)+'-'+dat[x].name+"</option>";
+		}
+		$('#studcode').html(test);
+	});
+}
+
 
 $(document).ready(function(){
 	getBulls();
+	getStud();
+	$('#date').datepicker.setDefaults({
+		showOn: "both",
+		buttonImageOnly: true,
+		buttonImage: "calendar.gif",
+		buttonText: "Calendar"
+	});
 });
