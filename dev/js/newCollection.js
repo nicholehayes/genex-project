@@ -1,5 +1,5 @@
 function getBulls(){
-	$.get("http://continentalgenetics.ddns.net:8080/get_bull", function( data ) {
+	$.get("http://continentalgenetics.ddns.net:8080/bull/get", function( data ) {
 		var dat = JSON.parse(data)
 		var test ="<option value=''>Choose Bull</option>";
 		for (var x in dat){

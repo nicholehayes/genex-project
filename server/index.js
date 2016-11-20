@@ -26,13 +26,13 @@ server.use(restify.acceptParser(server.acceptable));
 server.use(restify.CORS());
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
+server.use(restify.fullResponse());   
 
 //Register call recieved
 //This is to make logging clearer
 server.use(function(req, res, next) { 
 	console.log("--- Endpoint: " + req.path()); 
-	console.log("Request: " + util.inspect(req));
-	console.log("Response: " + util.inspect(res));
+	console.log("*Request:\n" + util.inspect({ "params" : req.params, "query" : req.query, "body" : req.body}));
 	return next(); 
 });
 

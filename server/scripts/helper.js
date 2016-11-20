@@ -4,21 +4,39 @@
  *
  */
 const qs = require('querystring');
+var util = require('util');
 
 exports.sqlWrapper = function(sql, args, res, next, callback) {
+	console.log("*Sql:\n\t"+sql);
+	console.log("*Args:\n\t"+args);
 	global.pool.query(sql, args, function(err, rows, fields) {
-		if(err) { res.json(500, err); next(); }
-		else { callback(rows, fields); }
+		if(err) { 
+			console.log("*SqlErr:\n\t", util.inspect(err));
+			res.json(500, err); 
+			next(); 
+		} else {
+			console.log("*SqlRow:\n\t", util.inspect(rows));
+			if(!callback) {
+				res.json(rows);
+				return next();
+			} else { 
+				callback(rows, fields); 
+			}
+		}
 	});
 };
 
-exports.generic_get = function(req, res, next) {
+exports.generic_get = function(req, res, next, orderby) {
 	if(!req.query || Object.keys(req.query).length == 0) {
 		if(!req.table) {
 			res.send(500, "generic_get requires table");
 			next();
 		} else {
-			exports.sqlWrapper("SELECT * FROM " + qs.escape(req.table), [], res, next, function(rows, fields) {
+			var sql = "SELECT * FROM " + qs.escape(req.table)
+			if(orderby) {
+				sql += " ORDER BY " + orderby + " ASC";
+			} 
+			exports.sqlWrapper(sql, [], res, next, function(rows, fields) {
 				res.json(rows);
 				next();
 			});
@@ -37,6 +55,10 @@ exports.generic_get = function(req, res, next) {
 					sql = sql + "AND ";
 				}
 			});
+
+			if(orderby) {
+				sql += " ORDER BY " + orderby + " ASC";
+			} 
 
 			console.log("Generic SQL: " + sql);
 			console.log("Generic Sel: " + sel);

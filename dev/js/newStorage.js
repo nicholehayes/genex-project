@@ -1,5 +1,5 @@
 function getStorage(){
-	$.get("http://continentalgenetics.ddns.net:8080/get_collection", function( data ) {
+	$.get("http://continentalgenetics.ddns.net:8080/collection/get", function( data ) {
 		var dat = JSON.parse(data)
 		var test ="<option value=''>Choose Bull</option>";
 		for (var x in dat){

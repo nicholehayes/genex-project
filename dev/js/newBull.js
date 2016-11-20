@@ -41,13 +41,14 @@ $(document).ready(function() {
 
 
 function newBull(){
-	var formData = JSON.stringify($("#newbullform").serializeArray());
+	var formData = JSON.stringify($("#newbullform").serializeArray().reduce(function(a, x) { a[x.name] = x.value; return a; }, {})); //I need a json object, not a serialized array.
+	//See: http://stackoverflow.com/questions/1184624/convert-form-data-to-javascript-object-with-jquery
 	if (checkOwnerships()){
 		var bullid = 0;
 		$.ajax({
 			url: 'http://continentalgenetics.ddns.net:8080/bull/add',
 			data: formData,
-			type: 'POST',
+			type: 'PUT',
 			dataType: 'json',
 			contentType:"application/json",
 			success:function(data){
@@ -62,9 +63,9 @@ function newBull(){
 			owners : addOwners()
 		};
 		$.ajax({
-			url: 'http://continentalgenetics.ddns.net:8080/owners/add',
-			data : data,
-			type: 'POST',
+			url: 'http://continentalgenetics.ddns.net:8080/owner/add',
+			data :  JSON.stringify(data),
+			type: 'PUT',
 			dataType: 'json',
 			contentType:"application/json",
 			success:function(data){
@@ -76,9 +77,9 @@ function newBull(){
 }
 
 function getBreeds(){
-	var params = {breed: "", breed_abbreviation: ""};
-	$.get("http://continentalgenetics.ddns.net:8080/breed/get", params, function( data ) {
-		var dat = JSON.parse(data);
+	var params = {}; //Don't send empty params from now on. -Craig
+	$.get("http://continentalgenetics.ddns.net:8080/breed/get", function( data ) {
+		var dat = data; //JSON.parse(data); This is now done by the browser. -Craig
 		var test ="";
 		for (var x in dat){
 		test+="<option value='"+dat[x].breed_abbreviation+"'>"+dat[x].breed+"</option>";
@@ -88,9 +89,9 @@ function getBreeds(){
 }
 var i = 1;
 function getOwner(){
-	var params = {first_name : "", last_name:""};
+	var params = {}; //Don't send empty params from now on. -Craig
 	$.get("http://continentalgenetics.ddns.net:8080/customer/get", function( data ) {
-		var dat = JSON.parse(data)
+		var dat = data; //JSON.parse(data); This is now done by the browser. -Craig
 		var test ="<option value = ''>---</option>";
 		for (var x in dat){
 		test+="<option value='"+dat[x].customer_id+"'>"+dat[x].last_name+", "+dat[x].first_name+"</option>";
