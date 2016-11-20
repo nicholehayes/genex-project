@@ -50,7 +50,7 @@ function newBull(){
 			dataType: 'json',
 			contentType:"application/json",
         success:function(data){
-            if(data.substr(0,1) === "1"){
+            if(data.substring(0,1) === "1"){
                 alert("success");
             }
             else{
