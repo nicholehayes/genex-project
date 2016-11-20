@@ -1,9 +1,20 @@
 function getStorage(){
 	$.get("http://continentalgenetics.ddns.net:8080/collection/get", function( data ) {
-		var dat = JSON.parse(data)
-		var test ="<option value=''>Choose Bull</option>";
+		var dat = (data)
+		var test ="<option value=''>Choose Collection</option>";
 		for (var x in dat){
 			test+="<option value='"+dat[x].breed_abbreviation+pad(dat[x].bull_id,5)+fixDate(dat[x].date)+"'>"+dat[x].breed_abbreviation+pad(dat[x].bull_id,5)+fixDate(dat[x].date)+"</option>";
+		}
+		$('#collection').html(test);
+	});
+}
+
+function getTank(){
+	$.get("http://continentalgenetics.ddns.net:8080/location/get", function( data ) {
+		var dat = (data)
+		var test ="<option value=''>Choose Tank</option>";
+		for (var x in dat){
+			test+="<option value='"+dat[x].tank+"'></option>";
 		}
 		$('#collection').html(test);
 	});
@@ -21,3 +32,24 @@ function fixDate(arg){
 $(document).ready(function(){
 	getStorage();
 });
+
+function getUnitsToBeStored(){
+
+	var collection = $('#collectionValue');
+	for (var i=0; i<collection.length; i++){
+
+
+	}
+
+
+
+	$.get("http://continentalgenetics.ddns.net:8080/collection/get", function( data ) {
+		var dat = (data)
+		var test ="<option value=''>Choose Tank</option>";
+		for (var x in dat){
+			test+="<option value='"+dat[x].breed_abbreviation+pad(dat[x].bull_id,5)+fixDate(dat[x].date)+"'>"+dat[x].breed_abbreviation+pad(dat[x].bull_id,5)+fixDate(dat[x].date)+"</option>";
+		}
+		$('#collection').html(test);
+	});
+
+}
