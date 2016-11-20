@@ -88,9 +88,7 @@ function do_get_customer(val, res, next) {
 //Some sort of input validation should be done.
 function do_add_customer(val, res, next) {
 	console.log("do_add_customer");
-	var sql = 'INSERT INTO customer ' +
-	'(first_name, last_name, street, city, state, zipcode, phone_number, email)' +	
-	'VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+	
 	
 	global.pool.getConnection(function(err, connection) {
 		if(err) {

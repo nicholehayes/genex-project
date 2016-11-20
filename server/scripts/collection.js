@@ -11,6 +11,14 @@ function collection_get(req, res, next) {
     req.table = 'collection';
     helper.generic_get(req,res,next);
 }
+server.get('/collection/get', collection_get);
+
+function collection_put(req, res, next) {
+    req.table = 'collection';
+    helper.generic_put(req,res,next);
+}
+server.put('/collection/put', collection_put);
+
 function collection_remaining_units(req, res, next) {
     if(!req.query.collection_id) {
         res.send(400, "Incorrect arguments. Expected collection_id.");
@@ -31,7 +39,4 @@ function collection_remaining_units(req, res, next) {
             helper.sqlWrapper(sql,sel,res,next);
     });
 }
-
-//Register endpoints
-server.get('/collection/get', collection_get);
 server.get('/collection/remaining_units', collection_remaining_units);

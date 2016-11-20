@@ -11,6 +11,13 @@ function bull_get(req, res, next) {
     req.table = 'bull';
     helper.generic_get(req,res,next);
 }
+server.get('/bull/get', bull_get);
+
+function bull_put(req, res, next) {
+    req.table = 'bull';
+    helper.generic_put(req,res,next);
+}
+server.put('/bull/put', bull_put);
 
 function bull_add(req, res, next) {
 
@@ -45,7 +52,10 @@ function bull_add(req, res, next) {
         helper.sqlWrapper(sql2,sel,res,next);
     });
 }
-
-//Register endpoints
-server.get('/bull/get', bull_get);
 server.put('/bull/add', bull_add);
+
+function bull_photo(req, res, next) {
+    res.send(501, "Prototype");
+    return next();
+}
+server.post('/bull/photo', bull_photo);

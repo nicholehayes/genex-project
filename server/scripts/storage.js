@@ -11,6 +11,10 @@ function storage_get(req, res, next) {
     req.table = 'storage';
     helper.generic_get(req,res,next);
 }
-
-//Register endpoints
 server.get('/storage/get', storage_get);
+
+function storage_put(req, res, next) {
+    req.table = 'storage';
+    helper.generic_put(req,res,next);
+}
+server.put('/storage/put', storage_put);

@@ -11,6 +11,10 @@ function studs_get(req, res, next) {
     req.table = 'studs';
     helper.generic_get(req,res,next);
 }
-
-//Register endpoints
 server.get('/studs/get', studs_get);
+
+function studs_put(req, res, next) {
+    req.table = 'studs';
+    helper.generic_put(req,res,next);
+}
+server.put('/studs/put', studs_put);

@@ -11,6 +11,13 @@ function customer_get(req, res, next) {
     req.table = 'customer';
     helper.generic_get(req, res, next, 'last_name');
 }
+server.get('/customer/get', customer_get);
+
+function customer_put(req, res, next) {
+    req.table = 'customer';
+    helper.generic_put(req,res,next);
+}
+server.put('/customer/put', customer_put);
 
 function customer_add(req, res, next) {
     if (!req.body.first_name ||
@@ -43,7 +50,4 @@ function customer_add(req, res, next) {
 
     helper.sqlWrapper(sql,val,res,next);
 }
-
-//Register endpoints
-server.get('/customer/get', customer_get);
 server.put('/customer/add', customer_add);
