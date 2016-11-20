@@ -67,3 +67,4 @@ function getUnitsToBeStored(){
 	});
 	$('#unitsstored').val(units).parent().addClass('is-focused');;
 }
+

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ec53e6cb-e9cd-45b6-a36d-a3ed4c77e54e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/newStorage.js" afterPath="$PROJECT_DIR$/dev/js/newStorage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/new-storage.html" afterPath="$PROJECT_DIR$/dev/new-storage.html" />
     </list>
     <ignored path="finalproject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,12 +77,20 @@
         <entry file="file://$PROJECT_DIR$/dev/new-storage.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="331">
-              <caret line="153" column="43" selection-start-line="153" selection-start-column="43" selection-end-line="153" selection-end-column="43" />
+              <caret line="165" column="43" selection-start-line="165" selection-start-column="43" selection-end-line="165" selection-end-column="43" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#3;n#div#1;n#div#0;n#form#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#4;n#div#1;n#div#0;n#form#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1479671611126" expanded="true" signature="1828:2032" ph="{...}" />
+                <marker date="1479671611126" expanded="true" signature="2060:2124" ph="{...}" />
+                <marker date="1479671611126" expanded="true" signature="2159:2373" ph="{...}" />
+                <marker date="1479671611126" expanded="true" signature="2405:2490" ph="{...}" />
+                <marker date="1479671611126" expanded="true" signature="2518:2551" ph="{...}" />
+                <marker date="1479671611126" expanded="true" signature="2583:2620" ph="{...}" />
+                <marker date="1479671611126" expanded="true" signature="2639:2651" ph="{...}" />
+                <marker date="1479671611126" expanded="true" signature="2672:2888" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -102,8 +109,8 @@
       <file leaf-file-name="newStorage.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/js/newStorage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+            <state relative-caret-position="823">
+              <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -363,12 +370,12 @@
       <workItem from="1479592090078" duration="1434000" />
       <workItem from="1479593744233" duration="8500000" />
       <workItem from="1479609413181" duration="3371000" />
-      <workItem from="1479655474790" duration="11190000" />
+      <workItem from="1479655474790" duration="11389000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45794000" />
+    <option name="totallyTimeSpent" value="45993000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -473,6 +480,14 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#div#1;n#div#0;n#form#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#4;n#div#1;n#div#0;n#form#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1479671611126" expanded="true" signature="1828:2032" ph="{...}" />
+            <marker date="1479671611126" expanded="true" signature="2060:2124" ph="{...}" />
+            <marker date="1479671611126" expanded="true" signature="2159:2373" ph="{...}" />
+            <marker date="1479671611126" expanded="true" signature="2405:2490" ph="{...}" />
+            <marker date="1479671611126" expanded="true" signature="2518:2551" ph="{...}" />
+            <marker date="1479671611126" expanded="true" signature="2583:2620" ph="{...}" />
+            <marker date="1479671611126" expanded="true" signature="2639:2651" ph="{...}" />
+            <marker date="1479671611126" expanded="true" signature="2672:2888" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -547,6 +562,14 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#div#1;n#div#0;n#form#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#4;n#div#1;n#div#0;n#form#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1479671611126" expanded="true" signature="1828:2032" ph="{...}" />
+            <marker date="1479671611126" expanded="true" signature="2060:2124" ph="{...}" />
+            <marker date="1479671611126" expanded="true" signature="2159:2373" ph="{...}" />
+            <marker date="1479671611126" expanded="true" signature="2405:2490" ph="{...}" />
+            <marker date="1479671611126" expanded="true" signature="2518:2551" ph="{...}" />
+            <marker date="1479671611126" expanded="true" signature="2583:2620" ph="{...}" />
+            <marker date="1479671611126" expanded="true" signature="2639:2651" ph="{...}" />
+            <marker date="1479671611126" expanded="true" signature="2672:2888" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -843,20 +866,28 @@
     <entry file="file://$PROJECT_DIR$/dev/new-storage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
-          <caret line="153" column="43" selection-start-line="153" selection-start-column="43" selection-end-line="153" selection-end-column="43" />
+          <caret line="165" column="43" selection-start-line="165" selection-start-column="43" selection-end-line="165" selection-end-column="43" />
           <folding>
             <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#div#1;n#div#0;n#form#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#4;n#div#1;n#div#0;n#form#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1479671611126" expanded="true" signature="1828:2032" ph="{...}" />
+            <marker date="1479671611126" expanded="true" signature="2060:2124" ph="{...}" />
+            <marker date="1479671611126" expanded="true" signature="2159:2373" ph="{...}" />
+            <marker date="1479671611126" expanded="true" signature="2405:2490" ph="{...}" />
+            <marker date="1479671611126" expanded="true" signature="2518:2551" ph="{...}" />
+            <marker date="1479671611126" expanded="true" signature="2583:2620" ph="{...}" />
+            <marker date="1479671611126" expanded="true" signature="2639:2651" ph="{...}" />
+            <marker date="1479671611126" expanded="true" signature="2672:2888" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/newStorage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+        <state relative-caret-position="823">
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding />
         </state>
       </provider>
