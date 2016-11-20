@@ -23,6 +23,19 @@ function getTank(){
 
 function changeTank(){
 	$('#tanknum').val($('#tank').find(':selected').val()).parent().addClass('is-focused');
+	var tank = $('#tank').find(':selected').val();
+	if (tank!= null || tank != '') {
+		$.get("http://continentalgenetics.ddns.net:8080/location/unit_count", {tank_number: tank}, function (data) {
+			var dat = (data)
+			var test = "";
+			for (var x in dat) {
+				var pie = dat[x].pie;
+				var box = dat[x].box;
+				var id = pie + box;
+				$("#" + id).text(dat[x].total_units);
+			}
+		});
+	}
 	componentHandler.upgradeDom();
 
 }
@@ -65,6 +78,7 @@ function getUnitsToBeStored(){
 			});
 		}
 	});
+	console.log(units);
 	$('#unitsstored').val(units).parent().addClass('is-focused');
 }
 
@@ -98,16 +112,18 @@ function addStorage(){
 				console.log(params);
 				$.ajax({
 					url: "http://continentalgenetics.ddns.net:8080/transaction/add/insert",
-					data: params,
+					data: JSON.stringify(params),
 					type: 'POST',
+					contentType:'application/json',
 					async: false,
 					success: function(data){
 						console.log(data);
-						getUnitsToBeStored();
 					}
 				});
 			}
 		});
+		getUnitsToBeStored();
+		changeTank();
 	}
 
 }
