@@ -50,12 +50,10 @@ function newBull(){
 			dataType: 'json',
 			contentType:"application/json",
         success:function(data){
-            if(data.substring(0,1) === "1"){
-                alert("success");
-            }
-            else{
-                alert(data);
-            }
+            if (data!=""){
+					alert("success");
+					window.location.reload();
+				}
         }
     });
 }
@@ -90,7 +88,6 @@ function getOwner(){
 }
 
 function addOwnership(){
-
 	var strVar="";
 	strVar += "<div class=\"mdl-selectfield mdl-js-selectfield\">";
 	strVar += "                            <select name=\"owner"+i+"\" class=\"mdl-selectfield__select owner\">";
@@ -99,18 +96,14 @@ function addOwnership(){
 	strVar += "                            <\/select>";
 	strVar += "                        <\/div>";
 	strVar += "                            <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">";
-	strVar += "                                <input class=\"mdl-textfield__input\" type=\"text\" id=\"percent"+i+"\" name=\"percent"+i+"\">";
+	strVar += "                                <input class=\"mdl-textfield__input percents\" type=\"text\" id=\"percent"+i+"\" name=\"percent"+i+"\">";
 	strVar += "                                <label class=\"mdl-textfield__label\" for=\"percent"+i+"\">Percent Ownership<\/label>";
 	strVar += "                            <\/div>";
-
-
-
 	//var text = document.getElementById('divtext').text;
 	$("#ownership").append(strVar);
 	componentHandler.upgradeDom();
 
 }
-
 
 
 $(document).ready(function(){
