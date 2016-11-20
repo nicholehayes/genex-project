@@ -53,6 +53,7 @@ require('./scripts/bull');
 require('./scripts/customer');
 require('./scripts/location');
 require('./scripts/storage');
+require('./scripts/transaction');
 
 //Report
 console.log('!!! - CSC 4402 Server Started - !!!');
