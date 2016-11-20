@@ -68,3 +68,41 @@ function getUnitsToBeStored(){
 	$('#unitsstored').val(units).parent().addClass('is-focused');;
 }
 
+
+function addStorage(){
+	var collection = $('#collection').find(':selected').val();
+	var unitsstored = parseInt($('#unitsstored').val());
+	var tank = $('#tank').val();
+	var pie = $('#pienum').val();
+	var box = $('#boxnum').val();
+	var numunits = parseInt($('#numunits').val());
+	if (numunits > unitsstored){
+		alert("You have exceeded units to be stored");
+	}else{
+		var locationid;
+		var params = {tank_number: tank, pie: pie, box: box};
+		$.ajax({
+			url: "http://continentalgenetics.ddns.net:8080/location/get",
+			data: params,
+			type: 'GET',
+			async: false,
+			success: function(data){
+				console.log(data);
+				locationid = data[0].location_id;
+
+				$.ajax({
+					url: "http://continentalgenetics.ddns.net:8080/transaction/put",
+					data: params,
+					type: 'GET',
+					async: false,
+					success: function(data){
+						console.log(data);
+						locationid = data[0].location_id;
+
+					}
+				});
+			}
+		});
+	}
+
+}

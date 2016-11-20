@@ -138,16 +138,15 @@ function transaction_add_in(req, res, next) {
         return next();
     }
 
-    sql1 = "INSERT INTO transaction (collection_id, units, datetime, trans_type, to_location_id) VALUES (?,?,?,?,?)";
+    sql1 = "INSERT INTO transaction (collection_id, units, trans_type, to_location_id) VALUES (?,?,?,?)";
     sel1 = [
         req.body.collection_id,
         req.body.units,
-        req.body.datetime,
         req.body.trans_type,
         req.body.to_location_id
     ];
 
-    sql2 = "UPDATE storage SET units = units + ? WHERE collection_id = ? AND location_id = ?";
+    sql2 = "INSERT INTO storage (collection_id, units, location_id) VALUES (?,?,?)";
     sel2 = [
         req.body.units,
         req.body.collection_id,

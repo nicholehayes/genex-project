@@ -16,9 +16,9 @@ uploadbutton.onchange = function () {
 **/
 
 
-document.getElementById("uploadBtn").onchange = function () {
+/*document.getElementById("uploadBtn").onchange = function () {
 	document.getElementById("uploadFile").value = this.files[0].name;
-};
+};*/
 
 $(document).ready(function() {
 	var max_fields      = 10; //maximum input boxes allowed
