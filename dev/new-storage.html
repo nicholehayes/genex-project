@@ -27,7 +27,8 @@
     <link rel="canonical" href="http://www.example.com/">
     -->
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.cyan-light_blue.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -41,14 +42,15 @@
             margin-bottom: 40px;
             z-index: 900;
         }
-        .demo-card-square{
+
+        .demo-card-square {
             width: 220px;
 
             margin: 5px;
 
         }
 
-        .mdl-button--file #input{
+        .mdl-button--file #input {
             cursor: pointer;
             height: 100%;
             right: 0;
@@ -59,7 +61,6 @@
             z-index: 4;
         }
 
-
         .mdl-textfield__input {
             box-sizing: border-box;
             width: calc(100% - 32px);
@@ -68,7 +69,6 @@
         .mdl-button--file {
             right: 0;
         }
-
 
         .mdl-card__title-text {
             color: white;
@@ -113,14 +113,23 @@
             </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-            <a class="mdl-navigation__link" href="index.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">dashboard</i>Dashboard</a>
-            <a class="mdl-navigation__link" href="new-customer.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">perm_identity</i>Customer</a>
-            <a class="mdl-navigation__link" href="new-bull.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">network_wifi</i>Bull</a>
-            <a class="mdl-navigation__link" href="new-collection.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">location_on</i>Collection</a>
-            <a class="mdl-navigation__link" href="new-storage.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">location_on</i>Storage</a>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">assessment</i>Transaction</a>
+            <a class="mdl-navigation__link" href="index.php"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                role="presentation">dashboard</i>Dashboard</a>
+            <a class="mdl-navigation__link" href="new-customer.html"><i
+                    class="mdl-color-text--blue-grey-400 material-icons"
+                    role="presentation">perm_identity</i>Customer</a>
+            <a class="mdl-navigation__link" href="new-bull.html"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                    role="presentation">network_wifi</i>Bull</a>
+            <a class="mdl-navigation__link" href="new-collection.html"><i
+                    class="mdl-color-text--blue-grey-400 material-icons"
+                    role="presentation">location_on</i>Collection</a>
+            <a class="mdl-navigation__link" href="new-storage.html"><i
+                    class="mdl-color-text--blue-grey-400 material-icons" role="presentation">location_on</i>Storage</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                       role="presentation">assessment</i>Transaction</a>
             <div class="mdl-layout-spacer"></div>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                       role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
         </nav>
     </div>
     <main class="mdl-layout__content mdl-color--grey-100">
@@ -128,13 +137,13 @@
             <form method="post" action="http://continentalgenetics.ddns.net/php/createcustomer.php" id="newbullform">
                 <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="width: 50em; margin-left: 10px;">
                     <div class="mdl-card__title" style="background-color: #37474F;">
-                        <h2 class="mdl-card__title-text" >New Storage</h2>
+                        <h2 class="mdl-card__title-text">New Storage</h2>
                     </div>
                     <div class="mdl-card__supporting-text">
 
                         <h6>Collection</h6>
                         <div class="mdl-selectfield mdl-js-selectfield">
-                            <select id="collection" name="collection" class="mdl-selectfield__select" >
+                            <select id="collection" name="collection" class="mdl-selectfield__select">
                                 <option value="">Choose Collection</option>
 
                             </select>
@@ -143,13 +152,53 @@
 
                         <h6>Units to be stored</h6>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" id="unitsstored" name="unitsstored" value="" readonly>
+                            <input class="mdl-textfield__input" type="text" id="unitsstored" name="unitsstored" value=""
+                                   readonly>
                             <label class="mdl-textfield__label" for="unitsstored">Units to be Stored</label>
                         </div>
+
+                        <h6>Tank</h6>
+                        <div class="mdl-selectfield mdl-js-selectfield">
+                            <select id="tank" name="tank" value="" class="mdl-selectfield__select">
+                                <option value="">Choose Tank</option>
+
+                            </select>
+
+                        </div>
+
+                        <h6>Storage Location</h6>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="tanknum" name="tanknum" value=""
+                                   readonly>
+                            <label class="mdl-textfield__label" for="tanknum">Tank Number</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="pienum" name="pienum" value="" readonly>
+                            <label class="mdl-textfield__label" for="pienum">Pie Number</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="boxnum" name="boxnum" value="" readonly>
+                            <label class="mdl-textfield__label" for="boxnum">Box Number</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="numunits" name="numunits" value="">
+                            <label class="mdl-textfield__label" for="numunits">Number of Units</label>
+                        </div>
+
+
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <!-- Flat button with ripple -->
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" type="button" onClick="newBull()"
+                                name="createcustomer">
+                            SAVE
+                        </button>
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" type="button">
+                            CANCEL
+                        </button>
                     </div>
                 </div>
             </form>
-
 
 
         </div>
