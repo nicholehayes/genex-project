@@ -105,6 +105,29 @@ function addOwnership(){
 
 }
 
+function checkOwnerships(){
+	var percents = $('.percents');
+	var sum = 0;
+	for (var i = 0; i < percents.length; i++){
+		sum+=parseInt(percents[i].value);
+	}
+	if(sum!=100){
+		alert("The sums do not match up to 100.");
+		return false;
+	}else{
+		return true;
+	}
+}
+
+function getOwners(){
+	var owners = $('.owners');
+	var percents = $('.percents');
+	
+	for (var i = 0; i < owners.length; i++){
+		
+	}
+}
+
 
 $(document).ready(function(){
 	getBreeds();
