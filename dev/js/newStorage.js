@@ -23,6 +23,19 @@ function getTank(){
 
 function changeTank(){
 	$('#tanknum').val($('#tank').find(':selected').val()).parent().addClass('is-focused');
+	var tank = $('#tank').find(':selected').val();
+	if (tank!= null || tank != '') {
+		$.get("http://continentalgenetics.ddns.net:8080/location/unit_count", {tank_number: tank}, function (data) {
+			var dat = (data)
+			var test = "";
+			for (var x in dat) {
+				var pie = dat[x].pie;
+				var box = dat[x].box;
+				var id = pie + box;
+				$("#" + id).text(dat[x].total_units);
+			}
+		});
+	}
 	componentHandler.upgradeDom();
 
 }
@@ -42,22 +55,75 @@ $(document).ready(function(){
 });
 
 function getUnitsToBeStored(){
-
-	var collection = $('#collectionValue');
-	for (var i=0; i<collection.length; i++){
-
-
-	}
-
-
-
-	$.get("http://continentalgenetics.ddns.net:8080/collection/get", function( data ) {
-		var dat = (data)
-		var test ="<option value=''>Choose Tank</option>";
-		for (var x in dat){
-			test+="<option value='"+dat[x].breed_abbreviation+pad(dat[x].bull_id,5)+fixDate(dat[x].date)+"'>"+dat[x].breed_abbreviation+pad(dat[x].bull_id,5)+fixDate(dat[x].date)+"</option>";
+	var collection = $('#collection').find(':selected').val();
+	var param = {collection_id:collection};
+	var units = 0;
+	$.ajax({
+		url: "http://continentalgenetics.ddns.net:8080/collection/get",
+		data: param,
+		type: 'GET',
+		async: false,
+		success: function(data){
+			units = parseInt(data[0].units);
+			$.ajax({
+				url: "http://continentalgenetics.ddns.net:8080/storage/get",
+				data: param,
+				type: 'GET',
+				async: false,
+				success: function(data){
+					for(var x in data){
+						units-=parseInt(data[x].units);
+					}
+				}
+			});
 		}
-		$('#collection').html(test);
 	});
+	console.log(units);
+	$('#unitsstored').val(units).parent().addClass('is-focused');
+}
+
+
+function addStorage(){
+	var collection = $('#collection').find(':selected').val();
+	var unitsstored = parseInt($('#unitsstored').val());
+	var tank = $('#tank').val();
+	var pie = $('#pienum').val();
+	var box = $('#boxnum').val();
+	var numunits = parseInt($('#numunits').val());
+	if (numunits > unitsstored){
+		alert("You have exceeded units to be stored");
+	}else{
+		var locationid;
+		var params = {tank_number: tank, pie: pie, box: box};
+		$.ajax({
+			url: "http://continentalgenetics.ddns.net:8080/location/get",
+			data: params,
+			type: 'GET',
+			async: false,
+			success: function(data){
+				console.log(data);
+				locationid = data[0].location_id;
+				params = {
+					collection_id:collection,
+					units :numunits,
+					trans_type: 4,
+					to_location_id: locationid
+				};
+				console.log(params);
+				$.ajax({
+					url: "http://continentalgenetics.ddns.net:8080/transaction/add/insert",
+					data: JSON.stringify(params),
+					type: 'POST',
+					contentType:'application/json',
+					async: false,
+					success: function(data){
+						console.log(data);
+					}
+				});
+			}
+		});
+		getUnitsToBeStored();
+		changeTank();
+	}
 
 }
