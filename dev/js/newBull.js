@@ -45,7 +45,7 @@ function newBull(){
 	if (checkOwnerships()){
 		var bullid = 0;
 		$.ajax({
-			url: 'http://continentalgenetics.ddns.net:8080/add_bull',
+			url: 'http://continentalgenetics.ddns.net:8080/bull/add',
 			data: formData,
 			type: 'POST',
 			dataType: 'json',
@@ -62,7 +62,7 @@ function newBull(){
 			owners : addOwners()
 		};
 		$.ajax({
-			url: 'http://continentalgenetics.ddns.net:8080/add_owners',
+			url: 'http://continentalgenetics.ddns.net:8080/owners/add',
 			data : data,
 			type: 'POST',
 			dataType: 'json',
@@ -76,8 +76,8 @@ function newBull(){
 }
 
 function getBreeds(){
-	var params = {breed: "", abbr: ""};
-	$.get("http://continentalgenetics.ddns.net:8080/get_breed", params, function( data ) {
+	var params = {breed: "", breed_abbreviation: ""};
+	$.get("http://continentalgenetics.ddns.net:8080/breed/get", params, function( data ) {
 		var dat = JSON.parse(data)
 		var test ="";
 		for (var x in dat){
@@ -89,7 +89,7 @@ function getBreeds(){
 var i = 1;
 function getOwner(){
 	var params = {first_name : "", last_name:""};
-	$.get("http://continentalgenetics.ddns.net:8080/get_customer", function( data ) {
+	$.get("http://continentalgenetics.ddns.net:8080/customer/get", function( data ) {
 		var dat = JSON.parse(data)
 		var test ="<option value = ''>---</option>";
 		for (var x in dat){

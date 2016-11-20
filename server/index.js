@@ -30,8 +30,9 @@ server.use(restify.bodyParser());
 //Register call recieved
 //This is to make logging clearer
 server.use(function(req, res, next) { 
-	console.log("--- Endpoint: " + req.path); 
-	console.log(util.inspect(req));
+	console.log("--- Endpoint: " + req.path()); 
+	console.log("Request: " + util.inspect(req));
+	console.log("Response: " + util.inspect(res));
 	return next(); 
 });
 
@@ -52,16 +53,15 @@ require('./scripts/bull');
 require('./scripts/customer');
 require('./scripts/location');
 require('./scripts/storage');
-require('./scripts/user');
 
 //Report
 console.log('!!! - CSC 4402 Server Started - !!!');
-console.log(util.inspect(server.router.mounts));
+//console.log(util.inspect(server.router.mounts));
+
+Object.keys(server.router.mounts).forEach(function(value) {
+	var spec = server.router.mounts[value].spec;
+	console.log("\t" + spec.method + " : " + spec.path);
+});
 
 //Start the server
 server.listen(8080);
-
-
-
-
-
