@@ -7,7 +7,7 @@ function registerCustomer(){
 		dataType: 'json',
 		contentType:"application/json",
 		success:function(data){
-			alert(success);
+			console.log("success");
 		}
 	});
 }

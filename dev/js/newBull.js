@@ -41,39 +41,63 @@ $(document).ready(function() {
 
 
 function newBull(){
-	var formData = JSON.stringify($("#newbullform").serializeArray().reduce(function(a, x) { a[x.name] = x.value; return a; }, {})); //I need a json object, not a serialized array.
+	var formData = {
+		'breed_abbreviation' : $('#breed_abbreviation').find(':selected').val(),
+		'name' :$('#name').val(),
+		'registration_number' :$('#registration_number').val(),
+		'css_certification' : $('input[name="css_certification"]:checked').val(),
+		'dob' :$('#dob').val()
+	};
 	//See: http://stackoverflow.com/questions/1184624/convert-form-data-to-javascript-object-with-jquery
+
 	if (checkOwnerships()){
 		var bullid = 0;
+		var abbreviation = $('#breed_abbreviation').find(':selected').val();
 		$.ajax({
 			url: 'http://continentalgenetics.ddns.net:8080/bull/add',
-			data: formData,
+			data: JSON.stringify(formData),
 			type: 'PUT',
 			dataType: 'json',
 			contentType:"application/json",
 			success:function(data){
-				data = JSON.parse(data);
-				bullid = data.bull_id;
-				console.log(bullid);
+				if (data.affectedRows){
+					console.log("successfully inserted");
+					bullid = getLastBullId(abbreviation);
+					var owners = addOwners(abbreviation, bullid);
+					console.log(owners);
+					for (var x in owners){
+						$.ajax({
+							url: 'http://continentalgenetics.ddns.net:8080/owner/put',
+							data :  JSON.stringify(owners[x]),
+							type: 'PUT',
+							dataType: 'json',
+							contentType:"application/json",
+							success:function(data){
+								console.log(data);
+							}
+						});
+					}
+				}else{
+					console.log("failed miserably");
+				}
 			}
 		});
-		/*var data = {
-			breed_abbreviation:$('#breed_abbreviation').val(),
-			bull_id: bullid,
-			owners : addOwners()
-		};
-		$.ajax({
-			url: 'http://continentalgenetics.ddns.net:8080/owner/add',
-			data :  JSON.stringify(data),
-			type: 'PUT',
-			dataType: 'json',
-			contentType:"application/json",
-			success:function(data){
-				alert(data);
-			}
-		});*/
-	}
-    
+	} 
+}
+
+function getLastBullId(abbr){
+	var params = {breed_abbreviation:abbr};
+	var id = 0;
+	$.ajax({
+		url:"http://continentalgenetics.ddns.net:8080/bull/get",
+		async:false,
+		data: params,
+		type: 'GET',
+		success:function( data ) {
+			id = data[data.length-1].bull_id;
+		}
+	});
+	return id;
 }
 
 function getBreeds(){
@@ -137,12 +161,12 @@ function checkOwnerships(){
 	}
 }
 
-function addOwners(){
+function addOwners(abbr, bid){
 	var owners = $('.owners');
 	var percents = $('.percents');
 	var data = new Array();
 	for (var i = 0; i < owners.length; i++){
-		var arg = {'customer_id':owners[i].value, 'percent_ownership':percents[i].value};
+		var arg = {'customer_id':owners[i].value,'bull_id':bid,'breed_abbreviation':abbr, 'percent_ownership':percents[i].value};
 		data.push(arg);
 	}
 	return data;

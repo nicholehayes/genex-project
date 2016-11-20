@@ -31,7 +31,7 @@ function bull_add(req, res, next) {
         return next();
     }
 
-    var sql1 = "(SELECT max(`bull_id`)+1 AS new_id from `bull` where `breed_abbreviation` LIKE ? )";
+    var sql1 = "(SELECT COALESCE(max(`bull_id`)+1,1) AS new_id from `bull` where `breed_abbreviation` LIKE ? )";
     var sql2 = "INSERT INTO `bull` (bull_id, breed_abbreviation, name, " + 
         "registration_number, css_certification, dob) " + 
         "VALUES (?,?,?,?,?,?)";
