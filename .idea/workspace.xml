@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec53e6cb-e9cd-45b6-a36d-a3ed4c77e54e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/newStorage.js" afterPath="$PROJECT_DIR$/dev/js/newStorage.js" />
     </list>
     <ignored path="finalproject.iws" />
@@ -55,8 +56,12 @@
         <entry file="file://$PROJECT_DIR$/dev/new-transaction.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="467">
-              <caret line="151" column="147" selection-start-line="151" selection-start-column="147" selection-end-line="151" selection-end-column="147" />
-              <folding />
+              <caret line="205" column="87" selection-start-line="205" selection-start-column="87" selection-end-line="205" selection-end-column="87" />
+              <folding>
+                <marker date="1479680098372" expanded="true" signature="2159:2373" ph="{...}" />
+                <marker date="1479680098372" expanded="true" signature="2518:2551" ph="{...}" />
+                <marker date="1479680098372" expanded="true" signature="2583:2620" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,8 +94,8 @@
       <file leaf-file-name="newStorage.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/js/newStorage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="721">
-              <caret line="125" column="21" selection-start-line="125" selection-start-column="21" selection-end-line="125" selection-end-column="21" />
+            <state relative-caret-position="177">
+              <caret line="102" column="25" selection-start-line="102" selection-start-column="25" selection-end-line="102" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -291,12 +296,12 @@
       <workItem from="1479592090078" duration="1434000" />
       <workItem from="1479593744233" duration="8500000" />
       <workItem from="1479609413181" duration="3371000" />
-      <workItem from="1479655474790" duration="18362000" />
+      <workItem from="1479655474790" duration="20620000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52966000" />
+    <option name="totallyTimeSpent" value="55224000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -388,7 +393,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2431">
           <caret line="143" column="0" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1479680098372" expanded="true" signature="2159:2373" ph="{...}" />
+            <marker date="1479680098372" expanded="true" signature="2518:2551" ph="{...}" />
+            <marker date="1479680098372" expanded="true" signature="2583:2620" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -697,8 +706,12 @@
     <entry file="file://$PROJECT_DIR$/dev/new-transaction.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
-          <caret line="151" column="147" selection-start-line="151" selection-start-column="147" selection-end-line="151" selection-end-column="147" />
-          <folding />
+          <caret line="205" column="87" selection-start-line="205" selection-start-column="87" selection-end-line="205" selection-end-column="87" />
+          <folding>
+            <marker date="1479680098372" expanded="true" signature="2159:2373" ph="{...}" />
+            <marker date="1479680098372" expanded="true" signature="2518:2551" ph="{...}" />
+            <marker date="1479680098372" expanded="true" signature="2583:2620" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -773,8 +786,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/newStorage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="721">
-          <caret line="125" column="21" selection-start-line="125" selection-start-column="21" selection-end-line="125" selection-end-column="21" />
+        <state relative-caret-position="177">
+          <caret line="102" column="25" selection-start-line="102" selection-start-column="25" selection-end-line="102" selection-end-column="25" />
           <folding />
         </state>
       </provider>
