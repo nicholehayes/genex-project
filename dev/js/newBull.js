@@ -78,7 +78,7 @@ function newBull(){
 function getBreeds(){
 	var params = {breed: "", breed_abbreviation: ""};
 	$.get("http://continentalgenetics.ddns.net:8080/breed/get", params, function( data ) {
-		var dat = JSON.parse(data)
+		var dat = JSON.parse(data);
 		var test ="";
 		for (var x in dat){
 		test+="<option value='"+dat[x].breed_abbreviation+"'>"+dat[x].breed+"</option>";
