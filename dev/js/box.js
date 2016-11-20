@@ -2,7 +2,7 @@
  * Created by kyle on 11/19/16.
  */
 
-$(document).ready(function() {
+
 
     var pie1 = 30;
 
@@ -56,18 +56,22 @@ $(document).ready(function() {
 
     $(".box-card").click(function () {
 
+        getColor();
 
-        // alert(this.id);
+        $('.box-card').removeClass('active');
+
+
+        $('#' + this.id).removeClass('box-green');
+        $('#' + this.id).removeClass('box-yellow');
+        $('#' + this.id).removeClass('box-orange');
+        $('#' + this.id).removeClass('box-red');
+
+        $('#' + this.id).addClass('active');
+
 
 
         var pos = this.id;
 
-
-        $('.box-card').removeClass('active');
-
-        $('#' + this.id).addClass('active');
-
-        //$(this).removeClass('selectFocus');
 
 
         var test = $('#' + pos).data(pos);
@@ -79,7 +83,137 @@ $(document).ready(function() {
 
         componentHandler.upgradeDom();
 
+        //previous = this.id;
+
+        lastID(this.id);
+        previous = this.id;
+
+
+
+
 
     });
 
-});
+
+function lastID(a) {
+
+    previous = a;
+
+
+}
+
+function getColor() {
+
+    for (var i = 1; i <= pie1; i++) {
+
+            var pie = pad(1);
+            var box = pad(i);
+            var idBox = pie+""+""+box;
+
+
+            if($("#" + idBox).text() < 100){
+
+                $('#'+ idBox).addClass('box-green');
+            }
+            else if($("#" + idBox).text() < 200){
+
+                $("#" + idBox).addClass('box-yellow');
+            }
+            else if($("#" + idBox).text() < 300){
+
+                $('#'+ idBox).addClass('box-orange');
+            }
+            else{
+
+                $('#'+ idBox).addClass('box-red');
+            }
+    }
+
+    for (var i = 1; i <= pie1; i++) {
+
+        var pie = pad(2);
+        var box = pad(i);
+        var idBox = pie+""+""+box;
+
+
+        if($("#" + idBox).text() < 100){
+
+            $('#'+ idBox).addClass('box-green');
+        }
+        else if($("#" + idBox).text() < 200){
+
+            $("#" + idBox).addClass('box-yellow');
+        }
+        else if($("#" + idBox).text() < 300){
+
+            $('#'+ idBox).addClass('box-orange');
+        }
+        else{
+
+            $('#'+ idBox).addClass('box-red');
+        }
+    }
+
+    for (var i = 1; i <= pie1; i++) {
+
+        var pie = pad(3);
+        var box = pad(i);
+        var idBox = pie+""+""+box;
+
+
+        if($("#" + idBox).text() < 100){
+
+            $('#'+ idBox).addClass('box-green');
+        }
+        else if($("#" + idBox).text() < 200){
+
+            $("#" + idBox).addClass('box-yellow');
+        }
+        else if($("#" + idBox).text() < 300){
+
+            $('#'+ idBox).addClass('box-orange');
+        }
+        else{
+
+            $('#'+ idBox).addClass('box-red');
+        }
+    }
+
+    for (var i = 1; i <= pie1; i++) {
+
+        var pie = pad(4);
+        var box = pad(i);
+        var idBox = pie+""+""+box;
+
+
+        if($("#" + idBox).text() < 100){
+
+            $('#'+ idBox).addClass('box-green');
+        }
+        else if($("#" + idBox).text() < 200){
+
+            $("#" + idBox).addClass('box-yellow');
+        }
+        else if($("#" + idBox).text() < 300){
+
+            $('#'+ idBox).addClass('box-orange');
+        }
+        else{
+
+            $('#'+ idBox).addClass('box-red');
+        }
+    }
+
+
+
+}
+
+
+    
+    
+
+
+
+
+
+
