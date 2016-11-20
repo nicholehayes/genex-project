@@ -7,14 +7,14 @@
 var helper = require('./helper');
 var server = global.server;
 
-function studs_get(req, res, next) {
-    req.table = 'studs';
+function stud_get(req, res, next) {
+    req.table = 'stud';
     helper.generic_get(req,res,next);
 }
-server.get('/studs/get', studs_get);
+server.get('/stud/get', stud_get);
 
-function studs_put(req, res, next) {
-    req.table = 'studs';
+function stud_put(req, res, next) {
+    req.table = 'stud';
     helper.generic_put(req,res,next);
 }
-server.put('/studs/put', studs_put);
+server.put('/stud/put', stud_put);

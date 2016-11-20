@@ -6,6 +6,7 @@
 
 var helper = require('./helper');
 var server = global.server;
+var util = require('util');
 
 function transaction_get(req, res, next) {
     req.table = 'transaction';
@@ -33,7 +34,6 @@ function transaction_add_rm(req, res, next) {
     console.log("*Discard or Ship transaction");
     if( !req.body.collection_id ||
         !req.body.units ||
-        !req.body.datetime ||
         !req.body.from_location_id) 
     {
         res.send(400,"Missing arguments.");
@@ -77,7 +77,6 @@ function transaction_add_mv(req, res, next) {
     console.log("*Ship transaction");
     if( !req.body.collection_id ||
         !req.body.units ||
-        !req.body.datetime ||
         !req.body.from_location_id ||
         !req.body.to_location_id)
     {
@@ -123,15 +122,14 @@ function transaction_add_in(req, res, next) {
         return next();
     }
 
-    if(req.body.trans_type != 1 && req.body.trans_type != 2) {
+    if(req.body.trans_type != 4) {
         res.send(400, "Wrong transaction type");
         return next();
     }
 
-    console.log("*Discard or Ship transaction");
+    console.log("*Insert transaction");
     if( !req.body.collection_id ||
         !req.body.units ||
-        !req.body.datetime ||
         !req.body.to_location_id) 
     {
         res.send(400,"Missing arguments.");
@@ -146,11 +144,13 @@ function transaction_add_in(req, res, next) {
         req.body.to_location_id
     ];
 
-    sql2 = "INSERT INTO storage (collection_id, units, location_id) VALUES (?,?,?)";
+    sql2 = "INSERT INTO storage (collection_id, units, location_id) VALUES (?,?,?)" +
+    "ON DUPLICATE KEY UPDATE units=units+?";
     sel2 = [
-        req.body.units,
         req.body.collection_id,
-        req.body.to_location_id
+        req.body.units,
+        req.body.to_location_id,
+        req.body.units
     ]
 
     helper.sqlWrapper(sql1,sel1, res, next, function(row, fields) {

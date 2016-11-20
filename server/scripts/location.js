@@ -42,4 +42,3 @@ function location_all_units(req, res, next) {
     }
 }
 server.get('/location/unit_count', location_all_units);
-server.get('/location/all_unit_count', location_all_units);
