@@ -121,10 +121,11 @@
             </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">dashboard</i>Dashboard</a>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">perm_identity</i>Customer</a>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">network_wifi</i>Bull</a>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">location_on</i>Location</a>
+            <a class="mdl-navigation__link" href="index.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">dashboard</i>Dashboard</a>
+            <a class="mdl-navigation__link" href="new-customer.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">perm_identity</i>Customer</a>
+            <a class="mdl-navigation__link" href="new-bull.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">network_wifi</i>Bull</a>
+            <a class="mdl-navigation__link" href="new-collection.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">location_on</i>Collection</a>
+            <a class="mdl-navigation__link" href="new-storage.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">location_on</i>Storage</a>
             <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">assessment</i>Transaction</a>
             <div class="mdl-layout-spacer"></div>
             <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
@@ -163,20 +164,7 @@
                 </div>
             </div>
 
-            <div class="demo-card-square mdl-card mdl-shadow--2dp">
-                <div class="mdl-card__title mdl-card--expand mdl-color--blue-grey-800">
-                    <h2 class="mdl-card__title-text">Location</h2>
-                </div>
 
-                <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        View
-                    </a>
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Add
-                    </a>
-                </div>
-            </div>
 
             <div class="demo-card-square mdl-card mdl-shadow--2dp">
                 <div class="mdl-card__title mdl-card--expand mdl-color--blue-grey-800">
@@ -202,7 +190,7 @@
                     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                         View
                     </a>
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="new-collection.html">
                         Add
                     </a>
                 </div>
@@ -217,7 +205,7 @@
                     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                         View
                     </a>
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="new-storage.html">
                         Add
                     </a>
                 </div>
