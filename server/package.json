@@ -1,0 +1,13 @@
+{
+  "name": "CSC4402-Project-Server",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "query-parser": "0.0.1",
+    "restify": "^4.3.0",
+    "util": "^0.10.3"
+  }
+}
