@@ -48,7 +48,7 @@ require('./scripts/helper');
 require('./scripts/breed');
 require('./scripts/collection');
 require('./scripts/owner');
-require('./scripts/studs');
+require('./scripts/stud');
 require('./scripts/bull');
 require('./scripts/customer');
 require('./scripts/location');
@@ -61,7 +61,7 @@ console.log('!!! - CSC 4402 Server Started - !!!');
 
 Object.keys(server.router.mounts).forEach(function(value) {
 	var spec = server.router.mounts[value].spec;
-	console.log("\t" + spec.method + " : " + spec.path);
+	console.log("\t" + spec.method + " : " + spec.path + " @ " + spec.name);
 });
 
 //Start the server

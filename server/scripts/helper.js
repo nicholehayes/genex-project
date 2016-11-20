@@ -59,28 +59,34 @@ exports.generic_put = function(req, res, next) {
 	});
 }
 
-exports.generic_get = function(req, res, next, orderby) {
+exports.generic_get = function(req, res, next, orderby, orderdir) {
+	var sql = "";
+	var sel = [];
+
+	if(req.query) {
+		if(req.query.order_by) {
+			orderby = req.query.order_by;
+			delete req.query.orderby;
+		}
+		if(req.query.order_dir) {
+			orderdir = req.query.order_dir;
+			delete req.query.order_dir;
+		}
+	}
+
 	if(!req.query || Object.keys(req.query).length == 0) {
 		if(!req.table) {
 			res.send(500, "generic_get requires table");
 			next();
 		} else {
-			var sql = "SELECT * FROM " + qs.escape(req.table)
-			if(orderby) {
-				sql += " ORDER BY " + orderby + " ASC";
-			} 
-			exports.sqlWrapper(sql, [], res, next, function(rows, fields) {
-				res.json(rows);
-				next();
-			});
+			sql = "SELECT * FROM " + qs.escape(req.table);
 		}
 	} else {
 		if(!req.table) {
 			res.send(500, "generic_get requires table");
 			next();
 		} else {
-			var sql = "SELECT * FROM " + qs.escape(req.table) + " WHERE ";
-			var sel = [];
+			sql = "SELECT * FROM " + qs.escape(req.table) + " WHERE ";
 			Object.keys(req.query).forEach(function(value, index, array) {
 				sql = sql + qs.escape(value) + " LIKE ? ";
 				sel.push(req.query[value]);
@@ -88,18 +94,22 @@ exports.generic_get = function(req, res, next, orderby) {
 					sql = sql + "AND ";
 				}
 			});
-
-			if(orderby) {
-				sql += " ORDER BY " + orderby + " ASC";
-			} 
-
-			console.log("Generic SQL: " + sql);
-			console.log("Generic Sel: " + sel);
-
-			exports.sqlWrapper(sql, sel, res, next, function(rows, fields) {
-				res.json(rows);
-				next();
-			});
 		}
 	} 
+
+	if(orderby) {
+		sql += " ORDER BY " + orderby + " ";
+		if(!orderdir) {
+			sql += "ASC";
+		} else {
+			sql += orderdir;
+		} 
+	} 
+
+	console.log("Generic SQL: " + sql);
+	console.log("Generic Sel: " + sel);
+	exports.sqlWrapper(sql, sel, res, next, function(rows, fields) {
+		res.json(rows);
+		next();
+	});
 }
