@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec53e6cb-e9cd-45b6-a36d-a3ed4c77e54e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/new-transaction.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/index.php" afterPath="$PROJECT_DIR$/dev/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/new-bull.html" afterPath="$PROJECT_DIR$/dev/new-bull.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/new-collection.html" afterPath="$PROJECT_DIR$/dev/new-collection.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/new-customer.html" afterPath="$PROJECT_DIR$/dev/new-customer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/new-storage.html" afterPath="$PROJECT_DIR$/dev/new-storage.html" />
     </list>
     <ignored path="finalproject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,7 +39,7 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2227">
+            <state relative-caret-position="493">
               <caret line="131" column="14" selection-start-line="122" selection-start-column="8" selection-end-line="131" selection-end-column="14" />
               <folding>
                 <element signature="e#6#87#0#PHP" expanded="true" />
@@ -46,18 +51,28 @@
       <file leaf-file-name="new-customer.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/new-customer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1734">
+            <state relative-caret-position="561">
               <caret line="102" column="14" selection-start-line="102" selection-start-column="14" selection-end-line="102" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new-bull.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="new-bull.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/new-bull.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+            <state relative-caret-position="637">
+              <caret line="123" column="14" selection-start-line="123" selection-start-column="14" selection-end-line="123" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new-transaction.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/new-transaction.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="123" column="14" selection-start-line="123" selection-start-column="14" selection-end-line="123" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -66,18 +81,18 @@
       <file leaf-file-name="new-storage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/new-storage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="586">
-              <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+            <state relative-caret-position="212">
+              <caret line="123" column="14" selection-start-line="123" selection-start-column="14" selection-end-line="123" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new-collection.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="new-collection.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/new-collection.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1666">
-              <caret line="98" column="41" selection-start-line="98" selection-start-column="41" selection-end-line="98" selection-end-column="41" />
+            <state relative-caret-position="612">
+              <caret line="123" column="14" selection-start-line="123" selection-start-column="14" selection-end-line="123" selection-end-column="14" />
               <folding>
                 <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -88,11 +103,13 @@
       <file leaf-file-name="newBull.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/js/newBull.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="96" column="93" selection-start-line="96" selection-start-column="93" selection-end-line="96" selection-end-column="93" />
+            <state relative-caret-position="527">
+              <caret line="90" column="18" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
               <folding>
-                <marker date="1479599971261" expanded="true" signature="1152:1154" ph="{...}" />
-                <marker date="1479599971261" expanded="true" signature="3458:3460" ph="{...}" />
+                <marker date="1479609817897" expanded="true" signature="1152:1154" ph="{...}" />
+                <marker date="1479609817897" expanded="true" signature="1152:1450" ph="{...}" />
+                <marker date="1479609817897" expanded="true" signature="1234:1450" ph="{&quot;url&quot;: 'http://continentalgenetics.ddns.net:8080/add_bull'...}" />
+                <marker date="1479609817897" expanded="true" signature="1434:1450" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -137,9 +154,10 @@
         <option value="$PROJECT_DIR$/dev/js/newBull.js" />
         <option value="$PROJECT_DIR$/dev/index.php" />
         <option value="$PROJECT_DIR$/dev/new-customer.html" />
-        <option value="$PROJECT_DIR$/dev/new-collection.html" />
-        <option value="$PROJECT_DIR$/dev/new-storage.html" />
         <option value="$PROJECT_DIR$/dev/new-bull.html" />
+        <option value="$PROJECT_DIR$/dev/new-transaction.html" />
+        <option value="$PROJECT_DIR$/dev/new-storage.html" />
+        <option value="$PROJECT_DIR$/dev/new-collection.html" />
       </list>
     </option>
   </component>
@@ -336,12 +354,12 @@
       <workItem from="1479574389335" duration="11352000" />
       <workItem from="1479592090078" duration="1434000" />
       <workItem from="1479593744233" duration="8500000" />
-      <workItem from="1479609413181" duration="182000" />
+      <workItem from="1479609413181" duration="1148000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31415000" />
+    <option name="totallyTimeSpent" value="32381000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -432,8 +450,10 @@
         <state relative-caret-position="1598">
           <caret line="96" column="93" selection-start-line="96" selection-start-column="93" selection-end-line="96" selection-end-column="93" />
           <folding>
-            <marker date="1479599971261" expanded="true" signature="1152:1154" ph="{...}" />
-            <marker date="1479599971261" expanded="true" signature="3458:3460" ph="{...}" />
+            <marker date="1479609817897" expanded="true" signature="1152:1154" ph="{...}" />
+            <marker date="1479609817897" expanded="true" signature="1152:1450" ph="{...}" />
+            <marker date="1479609817897" expanded="true" signature="1234:1450" ph="{&quot;url&quot;: 'http://continentalgenetics.ddns.net:8080/add_bull'...}" />
+            <marker date="1479609817897" expanded="true" signature="1434:1450" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -485,8 +505,10 @@
         <state relative-caret-position="1598">
           <caret line="96" column="113" selection-start-line="96" selection-start-column="113" selection-end-line="96" selection-end-column="113" />
           <folding>
-            <marker date="1479599971261" expanded="true" signature="1152:1154" ph="{...}" />
-            <marker date="1479599971261" expanded="true" signature="3458:3460" ph="{...}" />
+            <marker date="1479609817897" expanded="true" signature="1152:1154" ph="{...}" />
+            <marker date="1479609817897" expanded="true" signature="1152:1450" ph="{...}" />
+            <marker date="1479609817897" expanded="true" signature="1234:1450" ph="{&quot;url&quot;: 'http://continentalgenetics.ddns.net:8080/add_bull'...}" />
+            <marker date="1479609817897" expanded="true" signature="1434:1450" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -538,8 +560,10 @@
         <state relative-caret-position="1632">
           <caret line="98" column="17" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
           <folding>
-            <marker date="1479599971261" expanded="true" signature="1152:1154" ph="{...}" />
-            <marker date="1479599971261" expanded="true" signature="3458:3460" ph="{...}" />
+            <marker date="1479609817897" expanded="true" signature="1152:1154" ph="{...}" />
+            <marker date="1479609817897" expanded="true" signature="1152:1450" ph="{...}" />
+            <marker date="1479609817897" expanded="true" signature="1234:1450" ph="{&quot;url&quot;: 'http://continentalgenetics.ddns.net:8080/add_bull'...}" />
+            <marker date="1479609817897" expanded="true" signature="1434:1450" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -591,8 +615,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479599971261" expanded="true" signature="1152:1154" ph="{...}" />
-            <marker date="1479599971261" expanded="true" signature="3458:3460" ph="{...}" />
+            <marker date="1479609817897" expanded="true" signature="1152:1154" ph="{...}" />
+            <marker date="1479609817897" expanded="true" signature="1152:1450" ph="{...}" />
+            <marker date="1479609817897" expanded="true" signature="1234:1450" ph="{&quot;url&quot;: 'http://continentalgenetics.ddns.net:8080/add_bull'...}" />
+            <marker date="1479609817897" expanded="true" signature="1434:1450" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -647,9 +673,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/newBull.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="90" column="18" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
+          <folding>
+            <marker date="1479609817897" expanded="true" signature="1152:1154" ph="{...}" />
+            <marker date="1479609817897" expanded="true" signature="1152:1450" ph="{...}" />
+            <marker date="1479609817897" expanded="true" signature="1234:1450" ph="{&quot;url&quot;: 'http://continentalgenetics.ddns.net:8080/add_bull'...}" />
+            <marker date="1479609817897" expanded="true" signature="1434:1450" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2227">
+        <state relative-caret-position="493">
           <caret line="131" column="14" selection-start-line="122" selection-start-column="8" selection-end-line="131" selection-end-column="14" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
@@ -659,46 +698,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/new-customer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1734">
+        <state relative-caret-position="561">
           <caret line="102" column="14" selection-start-line="102" selection-start-column="14" selection-end-line="102" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/new-bull.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="123" column="14" selection-start-line="123" selection-start-column="14" selection-end-line="123" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/new-transaction.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="123" column="14" selection-start-line="123" selection-start-column="14" selection-end-line="123" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/new-storage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="123" column="14" selection-start-line="123" selection-start-column="14" selection-end-line="123" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/new-collection.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1666">
-          <caret line="98" column="41" selection-start-line="98" selection-start-column="41" selection-end-line="98" selection-end-column="41" />
+        <state relative-caret-position="612">
+          <caret line="123" column="14" selection-start-line="123" selection-start-column="14" selection-end-line="123" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/new-storage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/newBull.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="96" column="93" selection-start-line="96" selection-start-column="93" selection-end-line="96" selection-end-column="93" />
-          <folding>
-            <marker date="1479599971261" expanded="true" signature="1152:1154" ph="{...}" />
-            <marker date="1479599971261" expanded="true" signature="3458:3460" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/new-bull.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
