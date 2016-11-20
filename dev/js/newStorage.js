@@ -3,21 +3,28 @@ function getStorage(){
 		var dat = (data)
 		var test ="<option value=''>Choose Collection</option>";
 		for (var x in dat){
-			test+="<option value='"+dat[x].breed_abbreviation+pad(dat[x].bull_id,5)+fixDate(dat[x].date)+"'>"+dat[x].breed_abbreviation+pad(dat[x].bull_id,5)+fixDate(dat[x].date)+"</option>";
+			test+="<option value='"+dat[x].collection_id+"'>"+dat[x].breed_abbreviation+pad(dat[x].bull_id,5)+fixDate(dat[x].date)+"</option>";
 		}
 		$('#collection').html(test);
 	});
 }
 
 function getTank(){
-	$.get("http://continentalgenetics.ddns.net:8080/location/get", function( data ) {
+	var params = {pie: '01', box: '01'};
+	$.get("http://continentalgenetics.ddns.net:8080/location/get",params, function( data ) {
 		var dat = (data)
 		var test ="<option value=''>Choose Tank</option>";
 		for (var x in dat){
-			test+="<option value='"+dat[x].tank+"'></option>";
+			test+="<option value='"+dat[x].tank_number+"'>"+dat[x].tank_number+"</option>";
 		}
-		$('#collection').html(test);
+		$('#tank').html(test);
 	});
+}
+
+function changeTank(){
+	$('#tanknum').val($('#tank').find(':selected').val()).parent().addClass('is-focused');
+	componentHandler.upgradeDom();
+
 }
 
 function pad (str, max) {
@@ -31,6 +38,7 @@ function fixDate(arg){
 
 $(document).ready(function(){
 	getStorage();
+	getTank();
 });
 
 function getUnitsToBeStored(){

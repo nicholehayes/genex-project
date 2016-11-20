@@ -169,7 +169,7 @@
 
                         <h6>Tank</h6>
                         <div class="mdl-selectfield mdl-js-selectfield">
-                            <select id="tank" name="tank" value="" class="mdl-selectfield__select">
+                            <select id="tank" name="tank" value="" class="mdl-selectfield__select" onChange="changeTank();">
                                 <option value="">Choose Tank</option>
 
                             </select>
@@ -208,7 +208,7 @@
                             <label class="mdl-textfield__label" for="boxnum">Box Number</label>
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" id="numunits" name="numunits" value="">
+                            <input class="mdl-textfield__input" type="number" id="numunits" name="numunits" value="">
                             <label class="mdl-textfield__label" for="numunits">Number of Units</label>
                         </div>
 
@@ -234,7 +234,7 @@
 </div>
 <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<!--script src="./js/newStorage.js"></script-->
+<script src="./js/newStorage.js"></script>
 <script src="./js/box.js"></script>
 
 </body>
