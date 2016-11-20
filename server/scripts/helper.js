@@ -66,7 +66,7 @@ exports.generic_get = function(req, res, next, orderby, orderdir) {
 	if(req.query) {
 		if(req.query.order_by) {
 			orderby = req.query.order_by;
-			delete req.query.orderby;
+			delete req.query.order_by;
 		}
 		if(req.query.order_dir) {
 			orderdir = req.query.order_dir;
