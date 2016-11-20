@@ -65,7 +65,7 @@ function getUnitsToBeStored(){
 			});
 		}
 	});
-	$('#unitsstored').val(units).parent().addClass('is-focused');;
+	$('#unitsstored').val(units).parent().addClass('is-focused');
 }
 
 
@@ -89,16 +89,21 @@ function addStorage(){
 			success: function(data){
 				console.log(data);
 				locationid = data[0].location_id;
-
+				params = {
+					collection_id:collection,
+					units :numunits,
+					trans_type: 4,
+					to_location_id: locationid
+				};
+				console.log(params);
 				$.ajax({
-					url: "http://continentalgenetics.ddns.net:8080/transaction/put",
+					url: "http://continentalgenetics.ddns.net:8080/transaction/add/insert",
 					data: params,
-					type: 'GET',
+					type: 'POST',
 					async: false,
 					success: function(data){
 						console.log(data);
-						locationid = data[0].location_id;
-
+						getUnitsToBeStored();
 					}
 				});
 			}
