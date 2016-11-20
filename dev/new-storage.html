@@ -74,6 +74,25 @@
             color: white;
         }
 
+        #addBoxes{
+
+        }
+
+        .box-card  {
+            width: 40px;
+            height: 40px;
+            background-color: #37474F;
+            margin: 2px;
+            display: inline-block;
+            color: white;
+            font-size: 11px;
+        }
+
+        .box-card:hover {
+            background-color: #00b9d8;
+        }
+
+
 
     </style>
 </head>
@@ -157,7 +176,24 @@
 
                         </div>
 
-                        <h6>Storage Location</h6>
+                        <!-- ADD BOXES HERE -->
+                        <div style="float: none;"> <h6>Storage Location</h6></div>
+                        <div id="addBoxes" style="margin-top: 10px;">
+
+
+
+
+
+                        </div>
+
+
+
+
+                        <!-- END ADD BOXES -->
+
+
+
+
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="tanknum" name="tanknum" value=""
                                    readonly>
@@ -198,7 +234,8 @@
 </div>
 <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="./js/newStorage.js"></script>
+<!--script src="./js/newStorage.js"></script-->
+<script src="./js/box.js"></script>
 
 </body>
 </html>
