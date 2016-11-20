@@ -54,10 +54,10 @@ function newBull(){
 			success:function(data){
 				data = JSON.parse(data);
 				bullid = data.bull_id;
-				alert(bullid);
+				console.log(bullid);
 			}
 		});
-		var data = {
+		/*var data = {
 			breed_abbreviation:$('#breed_abbreviation').val(),
 			bull_id: bullid,
 			owners : addOwners()
@@ -71,7 +71,7 @@ function newBull(){
 			success:function(data){
 				alert(data);
 			}
-		});
+		});*/
 	}
     
 }

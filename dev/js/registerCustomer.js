@@ -7,12 +7,7 @@ function registerCustomer(){
 		dataType: 'json',
 		contentType:"application/json",
 		success:function(data){
-			if(~data.indexOf("1")){
-				alert("success");
-			}
-			else{
-				alert(data);
-			}
+			alert(success);
 		}
 	});
 }
