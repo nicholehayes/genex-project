@@ -8,6 +8,7 @@
     "body-parser": "^1.15.2",
     "query-parser": "0.0.1",
     "restify": "^4.3.0",
+    "resty": "0.0.3",
     "util": "^0.10.3"
   }
 }

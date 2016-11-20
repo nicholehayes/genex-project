@@ -1,62 +1,67 @@
+//NodeJS Requires
 var restify = require('restify');
 var mysql = require('mysql');
-fs = require('fs');
+var util = require('util');
 
+//Create the mysql pool
 global.pool = mysql.createPool({
-	connectionLimit : 16,
+	connectionLimit: 32,
 	host : 'localhost',
 	user : 'root',
 	password : 'database3',
 	database : 'cg'
 });
 
-var server = restify.createServer({
-	name: 'CSC4402-Server'
+//Create the server
+global.server = restify.createServer({
+	name: 'CSC4402-Server', 
+	handlesUpgrades: true //May be userful for images.
 });
 
-server.use(restify.CORS());
+//Handy alias
+var server = global.server;
+
+//Set server options
 server.use(restify.acceptParser(server.acceptable));
+server.use(restify.CORS());
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
 
+//Register call recieved
+//This is to make logging clearer
+server.use(function(req, res, next) { 
+	console.log("--- Endpoint: " + req.path); 
+	console.log(util.inspect(req));
+	return next(); 
+});
+
+//Register root server options
+function rootRes(req,res,next) { res.json({"status" : "running"}); return next()};
+server.get('/', rootRes);
+server.post('/', rootRes);
+server.put('/', rootRes);
+
+//Register the basic options for each function
+//Each module automatically registers with the server.
+require('./scripts/helper');
+require('./scripts/breed');
+require('./scripts/collection');
+require('./scripts/owner');
+require('./scripts/studs');
+require('./scripts/bull');
+require('./scripts/customer');
+require('./scripts/location');
+require('./scripts/storage');
+require('./scripts/user');
+
+//Report
+console.log('!!! - CSC 4402 Server Started - !!!');
+console.log(util.inspect(server.router.mounts));
+
+//Start the server
 server.listen(8080);
 
-function pong(req, res, next) {
-	res.send('pong');
-	return next();
-}
 
-global.fixParamsIfNameValue = function(req) {
-	if(!Array.isArray(req.params)) {
-		return;
-	}
 
-	var newParams = {};
 
-	//console.log("Fixing params");	
-	
-	req.params.forEach(function(val, index) {
-		newParams[val.name] = val.value;
-	});
 
-	req.params = newParams;
-}
-
-var breed = require('./breed');
-var customer = require('./customer');
-var bull = require('./bull');	
-var storage = require('./storage');
-var collection = require('./collection');
-var location = require('./location');
-
-server.get('ping', pong);
-server.get('get_breed', breed.get_breed);
-server.post('add_customer', customer.add_customer);
-server.get('get_customer', customer.get_customer);
-server.get('get_bull', bull.get_bull);
-server.post('add_bull', bull.add_bull);
-server.post('add_bull_pic', bull.add_bull_pic);
-server.get('get_storage', storage.get_storage);
-server.get('get_collection', collection.get_collection);
-server.get('get_collection_units_remaining', collection.get_remaining_units);
-server.get('get_all_units_locations', location.get_all_locations_units);
