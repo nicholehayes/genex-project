@@ -1,21 +1,17 @@
 function registerCustomer(){
-	var form = $('#registercustomerform')[0]; // You need to use standart javascript object here
-	var formData = new FormData(form);
+	var formData = JSON.stringify($("#registercustomerform").serializeArray());
 	$.ajax({
-		url: './php/createcustomer.php',
-		data: formData,
 		type: 'POST',
-		// THIS MUST BE DONE FOR FILE UPLOADING
-		contentType: false,
-		processData: false,
+		url: 'http://continentalgenetics.ddns.net:8080/add_customer',
+		data: formData,
+		dataType: 'json',
+		contentType:"application/json",
 		success:function(data){
 			if(~data.indexOf("1")){
 				alert("success");
-				window.location.reload();
 			}
 			else{
 				alert(data);
-				window.location.reload();
 			}
 		}
 	});

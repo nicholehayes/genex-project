@@ -113,11 +113,12 @@
             </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">dashboard</i>Dashboard</a>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">perm_identity</i>Customers</a>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">network_wifi</i>Bulls</a>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">location_on</i>Locations</a>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">assessment</i>Transactions</a>
+            <a class="mdl-navigation__link" href="index.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">dashboard</i>Dashboard</a>
+            <a class="mdl-navigation__link" href="new-customer.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">perm_identity</i>Customer</a>
+            <a class="mdl-navigation__link" href="new-bull.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">network_wifi</i>Bull</a>
+            <a class="mdl-navigation__link" href="new-collection.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">location_on</i>Collection</a>
+            <a class="mdl-navigation__link" href="new-storage.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">location_on</i>Storage</a>
+            <a class="mdl-navigation__link" href="new-transaction.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">assessment</i>Transaction</a>
             <div class="mdl-layout-spacer"></div>
             <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
         </nav>
@@ -125,7 +126,7 @@
     <main class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid demo-content">
             <form method="post" action="http://continentalgenetics.ddns.net/php/createcustomer.php" id="newbullform">
-                <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="width: 90%; margin-left: 10px;">
+                <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="width: 50em; margin-left: 10px;">
                     <div class="mdl-card__title" style="background-color: #37474F;">
                         <h2 class="mdl-card__title-text" >New Bull</h2>
                     </div>
@@ -133,7 +134,7 @@
 
                         <h6>Breed</h6>
                         <div class="mdl-selectfield mdl-js-selectfield">
-                            <select id="breed" name="breed" class="mdl-selectfield__select" onclick = "getBreeds()">
+                            <select id="breed_abbreviation" name="breed_abbreviation" class="mdl-selectfield__select" >
                                 <option value="">Choose Breed</option>
 
                             </select>
@@ -148,17 +149,17 @@
 
                         <h6>Registration Number</h6>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" id="regnum" name="regnum">
-                            <label class="mdl-textfield__label" for="regnum">Registration Number</label>
+                            <input class="mdl-textfield__input" type="text" id="registration_number" name="registration_number">
+                            <label class="mdl-textfield__label" for="registration_number">Registration Number</label>
                         </div>
                         <h6>CSS Certification</h6>
                         <div>
                             <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
-                                <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="Y" checked>
+                                <input type="radio" id="option-1" class="mdl-radio__button" name="css_certification" value="Y" checked>
                                 <span class="mdl-radio__label">Yes</span>
                             </label>
                             <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2" style="margin-left: 0.6em">
-                                <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="N">
+                                <input type="radio" id="option-2" class="mdl-radio__button" name="css_certification" value="N">
                                 <span class="mdl-radio__label">No</span>
                             </label>
                         </div>
@@ -166,21 +167,40 @@
                         <h6>Date of Birth</h6>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="dob" name="dob">
-                            <label class="mdl-textfield__label" for="dob">Date of Birth</label>
+                            <label class="mdl-textfield__label" for="dob">YYYY-MM-DD</label>
                         </div>
 
                         <h6>Upload Image</h6>
+                        
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
-                            <input class="mdl-textfield__input" placeholder="Bull Image" type="type" id="uploadFile" readonly/>
-                            <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
-                                <i class="material-icons">attach_file</i><input id="input"type="file" id="uploadBtn">
-                            </div>
+                            <input placeholder="File" type="text" id="bull_pic_name" readonly/>
+
+                                <input type="file" id="uploadBtn">
+
                         </div>
 
+                        <h6>Ownership</h6>
+                        <div id="ownership">
+                        <div class="mdl-selectfield mdl-js-selectfield">
+                            <select name="owner" class="mdl-selectfield__select owner">
+                                <option value="">Choose Customer</option>
+
+                            </select>
+                        </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input percents" type="number" id="percent" name="percent">
+                                <label class="mdl-textfield__label" for="percent">Percent Ownership</label>
+                            </div>
                     </div>
+                    </div>
+
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect" type="button" style = "width: 100px" onClick="addOwnership();getOwner();" name="verifyownership">
+                        ADD OWNER
+                    </button>
+
                     <div class="mdl-card__actions mdl-card--border">
                         <!-- Flat button with ripple -->
-                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" type="button" onClick="registerCustomer()" name="createcustomer">
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" type="button" onClick="newBull()" name="createcustomer">
                             SAVE
                         </button>
                         <button class="mdl-button mdl-js-button mdl-js-ripple-effect" type="button">
@@ -199,6 +219,7 @@
 </div>
 <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="/js/newBull.js"></script>
+<script src="./js/newBull.js"></script>
+
 </body>
 </html>
