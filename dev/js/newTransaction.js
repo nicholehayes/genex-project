@@ -30,12 +30,21 @@ function getTransactions() {
             var boxloc = data['box'];
             var boxUnits = data['units'];
 
-            var row = "<tr><td><input type=\"checkbox\"/></td><td class=\"mdl-data-table__cell--non-numeric\">"+collectionID+"</td> <td>"+tankloc+"</td> <td>"+pieloc+"</td> <td>"+boxloc+"</td> <td>"+boxUnits+"</td> </tr>";
+            var row = "<tr><td><input name=\"collection_selected\" type=\"radio\" value=\'" + JSON.stringify(data) + "\'/></td><td class=\"mdl-data-table__cell--non-numeric\">"+collectionID+"</td> <td>"+tankloc+"</td> <td>"+pieloc+"</td> <td>"+boxloc+"</td> <td>"+boxUnits+"</td> </tr>";
             $("#tableData")[0].innerHTML += row;
-			
         });
 	});
 }
+
+//NOTE: $('input[name=collection_selected]:checked', '#tableData').val()
+
+/*
+    -Add text with number of units remaining for selected collection
+        -Subtract the current number of units in the transaction form
+    -Add JS to enact the transactions
+    -If the storage combination doesn't exist yet, create it
+
+*/
 
 function getTank(){
 	var params = {pie: '01', box: '01'};

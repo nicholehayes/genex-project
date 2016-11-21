@@ -25,6 +25,4 @@ $("#move").click(function () {
     $("#discardDiv").hide();
     $("#shipDiv").hide();
     $("#moveDiv").show();
-
-
 });
