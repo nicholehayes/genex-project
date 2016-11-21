@@ -30,8 +30,9 @@ function getTransactions() {
             var boxloc = data['box'];
             var boxUnits = data['units'];
 
-            var row = " <tr><td></td><td class=\"mdl-data-table__cell--non-numeric\">"+collectionID+"</td> <td>"+tankloc+"</td> <td>"+pieloc+"</td> <td>"+boxloc+"</td> <td>"+boxUnits+"</td> </tr>";
+            var row = "<tr><td><input type=\"checkbox\"/></td><td class=\"mdl-data-table__cell--non-numeric\">"+collectionID+"</td> <td>"+tankloc+"</td> <td>"+pieloc+"</td> <td>"+boxloc+"</td> <td>"+boxUnits+"</td> </tr>";
             $("#tableData")[0].innerHTML += row;
+			
         });
 	});
 }
