@@ -48,6 +48,34 @@ function getTank(){
 	});
 }
 
+function getUnitsToBeStored(){
+	var collection = $('#collection').find(':selected').val();
+	var param = {collection_id:collection};
+	var units = 0;
+	$.ajax({
+		url: "http://continentalgenetics.ddns.net:8080/collection/get",
+		data: param,
+		type: 'GET',
+		async: false,
+		success: function(data){
+			units = parseInt(data[0].units);
+			$.ajax({
+				url: "http://continentalgenetics.ddns.net:8080/storage/get",
+				data: param,
+				type: 'GET',
+				async: false,
+				success: function(data){
+					for(var x in data){
+						units-=parseInt(data[x].units);
+					}
+				}
+			});
+		}
+	});
+	console.log(units);
+	$('#unitsstored').val(units).parent().addClass('is-focused');
+}
+
 function changeTank(){
 	$('#tanknum').val($('#tank').find(':selected').val()).parent().addClass('is-focused');
 	var tank = $('#tank').find(':selected').val();
@@ -92,4 +120,5 @@ function changeTank(){
 
 $(document).ready(function(){
 	getBulls();
+    getTank();
 });
