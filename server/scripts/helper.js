@@ -15,7 +15,7 @@ exports.sqlWrapper = function(sql, args, res, next, callback) {
 			res.json(500, err); 
 			next(); 
 		} else {
-			console.log("*SqlRow:\n\t", util.inspect(rows));
+			//console.log("*SqlRow:\n\t", util.inspect(rows));
 			if(!callback) {
 				res.json(rows);
 				return next();
@@ -94,7 +94,7 @@ exports.generic_get = function(req, res, next, orderby, orderdir, joinby) {
 	if(req.query && Object.keys(req.query).length > 0) {
 		sql += " WHERE ";
 		Object.keys(req.query).forEach(function(value, index, array) {
-			sql = sql + qs.escape(value) + " LIKE ? ";
+			sql = sql + qs.escape(req.table) + '.' + qs.escape(value) + " LIKE ? ";
 			sel.push(req.query[value]);
 			if(index + 1 != array.length) {
 				sql = sql + "AND ";

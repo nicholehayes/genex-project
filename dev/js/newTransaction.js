@@ -14,22 +14,24 @@ function pad (str, max) {
   return str.length < max ? pad("0" + str, max) : str;
 }
 
+function fixDate(arg){
+	return (arg.substring(5,7)+arg.substring(8,10)+arg.substring(0,4));
+}
+
 function getTransactions() {
     var buid = $('#bull').val();
-	$.get("http://continentalgenetics.ddns.net:8080/storage/get", { join_by : [{ table : 'collection', col1 : 'storage.collection_id', col2 : 'collection.collection_id'  }, 
-        { table : 'location', col1 : 'storage.location_id', col2 : 'location.location_id'  }], 
-        bull_uid : buid, order_by : 'date', order_dir : 'ASC' }, function( data ) {
+	$.get("http://continentalgenetics.ddns.net:8080/storage/all_units", { bull_uid : buid }, function( data ) {
         console.log(data);
-        $("#tableData").innerHTML = "";
+        $("#tableData")[0].innerHTML = "";
         data.forEach(function(data) {
-            var collectionID = data['collection_id'];
+            var collectionID = data.breed_abbreviation+pad(data.bull_id,5)+fixDate(data.date);
             var tankloc = data['tank_number'];
             var pieloc = data['pie'];
             var boxloc = data['box'];
             var boxUnits = data['units'];
 
-            var row = " <tr><td class=\"mdl-data-table__cell--non-numeric\">"+collectionID+"</td> <td>"+tankloc+"</td> <td>"+pieloc+"</td> <td>"+boxloc+"</td> <td>"+boxUnits+"</td> </tr>";
-            $("#tableData").append(row);
+            var row = " <tr><td></td><td class=\"mdl-data-table__cell--non-numeric\">"+collectionID+"</td> <td>"+tankloc+"</td> <td>"+pieloc+"</td> <td>"+boxloc+"</td> <td>"+boxUnits+"</td> </tr>";
+            $("#tableData")[0].innerHTML += row;
         });
 	});
 }
