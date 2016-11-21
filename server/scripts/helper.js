@@ -59,7 +59,7 @@ exports.generic_put = function(req, res, next) {
 	});
 }
 
-exports.generic_get = function(req, res, next, orderby, orderdir) {
+exports.generic_get = function(req, res, next, orderby, orderdir, joinby) {
 	var sql = "";
 	var sel = [];
 
@@ -72,29 +72,34 @@ exports.generic_get = function(req, res, next, orderby, orderdir) {
 			orderdir = req.query.order_dir;
 			delete req.query.order_dir;
 		}
+		if(req.query.join_by) {
+			joinby = req.query.join_by;
+			delete req.query.join_by;
+		}
 	}
 
-	if(!req.query || Object.keys(req.query).length == 0) {
-		if(!req.table) {
-			res.send(500, "generic_get requires table");
-			next();
-		} else {
-			sql = "SELECT * FROM " + qs.escape(req.table);
-		}
+	if(!req.table) {
+		res.send(500, "generic_get requires table");
+		next();
 	} else {
-		if(!req.table) {
-			res.send(500, "generic_get requires table");
-			next();
-		} else {
-			sql = "SELECT * FROM " + qs.escape(req.table) + " WHERE ";
-			Object.keys(req.query).forEach(function(value, index, array) {
-				sql = sql + qs.escape(value) + " LIKE ? ";
-				sel.push(req.query[value]);
-				if(index + 1 != array.length) {
-					sql = sql + "AND ";
-				}
-			});
-		}
+		sql = "SELECT * FROM " + qs.escape(req.table);
+	}
+
+	if(joinby && Array.isArray(joinby)) {
+		joinby.forEach(function(val, index, array) {
+			sql += " JOIN " +  val.table + " ON " + val.col1 + "=" + val.col2;
+		});
+	}
+
+	if(req.query && Object.keys(req.query).length > 0) {
+		sql += " WHERE ";
+		Object.keys(req.query).forEach(function(value, index, array) {
+			sql = sql + qs.escape(value) + " LIKE ? ";
+			sel.push(req.query[value]);
+			if(index + 1 != array.length) {
+				sql = sql + "AND ";
+			}
+		});
 	} 
 
 	if(orderby) {

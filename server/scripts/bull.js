@@ -59,3 +59,9 @@ function bull_photo(req, res, next) {
     return next();
 }
 server.post('/bull/photo', bull_photo);
+
+function bull_max_uid(req,res,next) {
+    var sql = "SELECT * FROM `bull` WHERE `bull_uid` = ( SELECT max( bull_uid ) FROM bull )";
+    helper.sqlWrapper(sql,[],res,next);
+}
+server.get('/bull/max_uid', bull_max_uid);

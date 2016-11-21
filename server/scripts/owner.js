@@ -18,8 +18,3 @@ function owner_put(req, res, next) {
     helper.generic_put(req,res,next);
 }
 server.put('/owner/put', owner_put);
-
-function owner_add(req, res, next) {
-    res.send(501, "Not implemented");
-}
-server.put('/owner/add', owner_add);
