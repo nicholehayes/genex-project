@@ -73,6 +73,72 @@
         .mdl-card__title-text {
             color: white;
         }
+
+        .radioSelection{
+            display: inline-block;
+        }
+
+        .radioSelection-hide1 {
+
+            display: none;
+        }
+
+        .box-card  {
+            width: 40px;
+            height: 40px;
+            background-color: #37474F;
+            margin: 2px;
+            display: inline-block;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+
+
+        }
+
+        .box-card:hover {
+            background-color: #00b9d8;
+        }
+
+        .selectFocus {
+            background-color: #00b9d8;
+
+        }
+
+        .active {
+            background-color: #00b9d8;
+
+        }
+
+        .box-green{
+
+            background-color: darkgreen;
+
+        }
+
+        .box-yellow{
+
+            background-color: darkgoldenrod;
+
+        }
+
+        .box-orange{
+
+            background-color: orangered;
+
+        }
+
+        .box-red {
+
+            background-color: darkred;
+
+        }
+
+
+
+
+
+
     </style>
 </head>
 <body>
@@ -162,7 +228,7 @@
                                 <th>Unit</th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="tableData">
                             <tr>
                                 <td class="mdl-data-table__cell--non-numeric">944h4o</td>
                                 <td>01</td>
@@ -186,6 +252,76 @@
                             <span class="mdl-radio__label">Move</span>
                         </label><br>
 
+                        <div id="discardDiv" class="radioSelection-hide">
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="unitDiscard">
+                                <label class="mdl-textfield__label" for="unitDiscard">Units to discard.</label>
+                                <span class="mdl-textfield__error">Input is not a number!</span>
+                            </div>
+
+                        </div>
+                        <div id="shipDiv" class="radioSelection-hide">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="unitShip">
+                                <label class="mdl-textfield__label" for="unitShip">Units to ship.</label>
+                                <span class="mdl-textfield__error">Input is not a number!</span>
+                            </div>
+                        </div>
+                        <div id="moveDiv" class="radioSelection">
+
+                            <h6>Tank</h6>
+                            <div class="mdl-selectfield mdl-js-selectfield">
+                                <select id="tank" name="tank" value="" class="mdl-selectfield__select" onChange="changeTank();">
+                                    <option value="">Choose Tank</option>
+
+                                </select>
+
+                            </div>
+
+                            <!-- ADD BOXES HERE -->
+                            <div style="float: none;"> <h6>Storage Location</h6></div>
+                            <div id="addBoxes" style="margin-top: 10px;">
+
+
+
+
+
+                            </div>
+
+
+
+
+                            <!-- END ADD BOXES -->
+
+
+
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="tanknum" name="tanknum" value=""
+                                       readonly>
+                                <label class="mdl-textfield__label" for="tanknum">Tank Number</label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="pienum" name="pienum" value="" readonly>
+                                <label class="mdl-textfield__label" for="pienum">Pie Number</label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="boxnum" name="boxnum" value="" readonly>
+                                <label class="mdl-textfield__label" for="boxnum">Box Number</label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="number" id="numunits" name="numunits" value="">
+                                <label class="mdl-textfield__label" for="numunits">Number of Units</label>
+                            </div>
+
+
+                        </div>
+
+
+
+                        </div>
+
 
 
 
@@ -208,7 +344,11 @@
 </div>
 <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="./js/newTransaction.js"></script>
+<!--script src="./js/newTransaction.js"></script-->
+<script src="./js/newCollection.js"></script>
+<script src="./js/trans.js"></script>
+<script src="./js/box.js"></script>
+<script src="./js/newStorage.js"></script>
 
 </body>
 </html>
