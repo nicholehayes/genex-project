@@ -28,15 +28,40 @@ function changeTank(){
 		$.get("http://continentalgenetics.ddns.net:8080/location/unit_count", {tank_number: tank}, function (data) {
 			var dat = (data)
 			var test = "";
+			$('.box-card').removeClass('box-green');
+			$('.box-card').removeClass('box-yellow');
+			$('.box-card').removeClass('box-orange');
+			$('.box-card').removeClass('box-red');
+
 			for (var x in dat) {
 				var pie = dat[x].pie;
 				var box = dat[x].box;
 				var id = pie + box;
 				$("#" + id).text(dat[x].total_units);
+				
+				if($("#" + id).text() < 100){
+
+					$('#'+ id).addClass('box-green');
+				}
+				else if($("#" + id).text() < 200){
+
+					$("#" + id).addClass('box-yellow');
+				}
+				else if($("#" + id).text() < 300){
+
+					$('#'+ id).addClass('box-orange');
+				}
+				else{
+
+					$('#'+ id).addClass('box-red');
+				}
 			}
 		});
 	}
 	componentHandler.upgradeDom();
+	
+
+	//return getColor();
 
 }
 
@@ -137,3 +162,8 @@ function addStorage(){
 	}
 
 }
+
+
+
+
+

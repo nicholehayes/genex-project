@@ -3,7 +3,7 @@ function getBulls(){
 		var dat = data;
 		var test ="<option value=''>Choose Bull</option>";
 		for (var x in dat){
-			test+="<option value='"+dat[x].breed_abbreviation+pad(dat[x].bull_id,5)+"'>"+dat[x].breed_abbreviation+pad(dat[x].bull_id,5)+" - "+dat[x].name+"</option>";
+			test+="<option value='"+dat[x].bull_uid+"'>"+dat[x].breed_abbreviation+pad(dat[x].bull_id,5)+" - "+dat[x].name+"</option>";
 		}
 		$('#bull').html(test);
 	});
@@ -26,14 +26,19 @@ function getStud(){
 	});
 }
 
-
+function addCollection(){
+	var bull = $('#bull').find(':selected').val();
+	var stud = $('#studcode').find(':selected').val();
+	var date = $('#date').val();
+	var volume = $('#volume').val();
+	var motility = $('#motility').val();
+	var units = $('#units').val();
+	var notes = $('#notes').val();
+	var data = {
+		bull
+	}
+}
 $(document).ready(function(){
 	getBulls();
 	getStud();
-	$('#date').datepicker.setDefaults({
-		showOn: "both",
-		buttonImageOnly: true,
-		buttonImage: "calendar.gif",
-		buttonText: "Calendar"
-	});
 });
